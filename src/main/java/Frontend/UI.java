@@ -4,8 +4,13 @@
  */
 package Frontend;
 
+import Backend.SpeciesManager;
 import java.awt.Color;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
 
 /**
  *
@@ -16,8 +21,30 @@ public class UI extends javax.swing.JFrame {
     /**
      * Creates new form UI
      */
-    public UI() {
+    public UI() throws FileNotFoundException {
         initComponents();
+        
+        //Initialise Species Screen
+        //1. Get list from backend
+        //2. Create DefaultListModel 
+        //3. Add list to model
+        //4, Set model
+        
+        
+        //Initialise xxxx Screen
+        populateSpeciesList();
+        
+    }
+    
+    public void populateSpeciesList() throws FileNotFoundException {
+        //populating the species list
+        String[] species = SpeciesManager.getSpeciesList();
+        DefaultListModel speciesListModel = new DefaultListModel();
+        for (int i = 0; i < species.length; i++) {
+            speciesListModel.addElement(species[i]);
+            
+        }
+        List_SPECIES_SpeciesList.setModel(speciesListModel);
     }
 
     /**
@@ -103,6 +130,12 @@ public class UI extends javax.swing.JFrame {
         Button_SPECIES_Add = new javax.swing.JButton();
         Label_SPECIES_SelectDelete = new javax.swing.JLabel();
         Button_SPECIES_Delete = new javax.swing.JButton();
+        LOGIN_PANE = new javax.swing.JPanel();
+        Label_LOGIN_Name = new javax.swing.JLabel();
+        PasswordField_LOGIN_Name = new javax.swing.JPasswordField();
+        Label_LOGIN_Password = new javax.swing.JLabel();
+        TextField_LOGIN_Name = new javax.swing.JTextField();
+        LOGOPlacment_LOGIN = new javax.swing.JTextField();
         MEDICATION_PANE = new javax.swing.JPanel();
         jScrollPane10 = new javax.swing.JScrollPane();
         List_MED_MedsList = new javax.swing.JList<>();
@@ -119,12 +152,6 @@ public class UI extends javax.swing.JFrame {
         ComboBox_MED_Species = new javax.swing.JComboBox<>();
         Label_MED_SelectDelete = new javax.swing.JLabel();
         Button_MED_Delete = new javax.swing.JButton();
-        LOGIN_PANE = new javax.swing.JPanel();
-        Label_LOGIN_Name = new javax.swing.JLabel();
-        PasswordField_LOGIN_Name = new javax.swing.JPasswordField();
-        Label_LOGIN_Password = new javax.swing.JLabel();
-        TextField_LOGIN_Name = new javax.swing.JTextField();
-        LOGOPlacment_LOGIN = new javax.swing.JTextField();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -324,15 +351,15 @@ public class UI extends javax.swing.JFrame {
                             .addComponent(Label_CAL_Medication))
                         .addGap(56, 56, 56)
                         .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TextField_CAL_Medication, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TextField_CAL_Weight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ComboBox_CAL_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(ComboBox_CAL_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TextField_CAL_Medication, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TextField_CAL_Weight, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(DOSAGE_CAL_PANELayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Label_CAL_Dosage, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TextField_CAL_Dosage, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         DOSAGE_CAL_PANELayout.setVerticalGroup(
             DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -355,7 +382,7 @@ public class UI extends javax.swing.JFrame {
                 .addComponent(Label_CAL_Dosage)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TextField_CAL_Dosage, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         LOCATION_TAB.addTab("Dosage Calculator", DOSAGE_CAL_PANE);
@@ -374,10 +401,20 @@ public class UI extends javax.swing.JFrame {
         Label_SPECIES_Name.setText("Name");
 
         Button_SPECIES_Add.setText("ADD");
+        Button_SPECIES_Add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_SPECIES_AddActionPerformed(evt);
+            }
+        });
 
         Label_SPECIES_SelectDelete.setText("Select Species from list to Delete");
 
         Button_SPECIES_Delete.setText("DELETE");
+        Button_SPECIES_Delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_SPECIES_DeleteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout SPECIES_PANELayout = new javax.swing.GroupLayout(SPECIES_PANE);
         SPECIES_PANE.setLayout(SPECIES_PANELayout);
@@ -408,7 +445,7 @@ public class UI extends javax.swing.JFrame {
                                         .addComponent(Label_SPECIES_SelectDelete)
                                         .addGap(18, 18, 18)
                                         .addComponent(Button_SPECIES_Delete)))
-                                .addGap(0, 48, Short.MAX_VALUE))))))
+                                .addGap(0, 81, Short.MAX_VALUE))))))
         );
         SPECIES_PANELayout.setVerticalGroup(
             SPECIES_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -434,6 +471,53 @@ public class UI extends javax.swing.JFrame {
         );
 
         LOCATION_TAB.addTab("Species ", SPECIES_PANE);
+
+        LOGIN_PANE.setBackground(new java.awt.Color(217, 217, 217));
+        LOGIN_PANE.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createCompoundBorder(), null), null), null), null));
+
+        Label_LOGIN_Name.setText("Name");
+
+        PasswordField_LOGIN_Name.setText("jPasswordField1");
+
+        Label_LOGIN_Password.setText("Password");
+
+        LOGOPlacment_LOGIN.setText("LOGO");
+
+        javax.swing.GroupLayout LOGIN_PANELayout = new javax.swing.GroupLayout(LOGIN_PANE);
+        LOGIN_PANE.setLayout(LOGIN_PANELayout);
+        LOGIN_PANELayout.setHorizontalGroup(
+            LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LOGIN_PANELayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(LOGOPlacment_LOGIN, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(LOGIN_PANELayout.createSequentialGroup()
+                        .addGroup(LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Label_LOGIN_Name)
+                            .addComponent(Label_LOGIN_Password))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(PasswordField_LOGIN_Name, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                            .addComponent(TextField_LOGIN_Name))))
+                .addContainerGap(117, Short.MAX_VALUE))
+        );
+        LOGIN_PANELayout.setVerticalGroup(
+            LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LOGIN_PANELayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Label_LOGIN_Name)
+                    .addComponent(TextField_LOGIN_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(PasswordField_LOGIN_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Label_LOGIN_Password))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addComponent(LOGOPlacment_LOGIN, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35))
+        );
+
+        LOCATION_TAB.addTab("Login", LOGIN_PANE);
 
         MEDICATION_PANE.setBackground(new java.awt.Color(217, 217, 217));
 
@@ -492,127 +576,81 @@ public class UI extends javax.swing.JFrame {
                         .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(MEDICATION_PANELayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Label_MED_FormulaAdd)
-                                    .addComponent(TextField_MED_FormulaAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MEDICATION_PANELayout.createSequentialGroup()
-                                        .addComponent(Button_MED_FormulaAdd)
-                                        .addGap(40, 40, 40))))
-                            .addGroup(MEDICATION_PANELayout.createSequentialGroup()
                                 .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(MEDICATION_PANELayout.createSequentialGroup()
-                                        .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(MEDICATION_PANELayout.createSequentialGroup()
-                                                .addGap(18, 18, 18)
-                                                .addComponent(Label_MED_FormulaGuide))
-                                            .addGroup(MEDICATION_PANELayout.createSequentialGroup()
-                                                .addGap(18, 18, 18)
-                                                .addComponent(Label_MED_MedName))
-                                            .addGroup(MEDICATION_PANELayout.createSequentialGroup()
-                                                .addGap(18, 18, 18)
-                                                .addComponent(TextField_MED_MedName, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(MEDICATION_PANELayout.createSequentialGroup()
-                                                .addGap(67, 67, 67)
-                                                .addComponent(ComboBox_MED_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(MEDICATION_PANELayout.createSequentialGroup()
-                                                .addGap(59, 59, 59)
-                                                .addComponent(Label_MED_Species))))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(Label_MED_MedName))
                                     .addGroup(MEDICATION_PANELayout.createSequentialGroup()
-                                        .addGap(27, 27, 27)
-                                        .addComponent(Label_MED_SelectDelete)
-                                        .addGap(33, 33, 33)
-                                        .addComponent(Button_MED_Delete)))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(TextField_MED_MedName, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(70, 70, 70)
+                                .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ComboBox_MED_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Label_MED_Species))
+                                .addGap(0, 63, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MEDICATION_PANELayout.createSequentialGroup()
+                                .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(MEDICATION_PANELayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(Label_MED_SelectDelete))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, MEDICATION_PANELayout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(Label_MED_FormulaGuide)
+                                            .addComponent(jScrollPane15))))
+                                .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(MEDICATION_PANELayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(Label_MED_FormulaAdd)
+                                            .addComponent(TextField_MED_FormulaAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MEDICATION_PANELayout.createSequentialGroup()
+                                                .addComponent(Button_MED_FormulaAdd)
+                                                .addGap(40, 40, 40))))
+                                    .addGroup(MEDICATION_PANELayout.createSequentialGroup()
+                                        .addGap(32, 32, 32)
+                                        .addComponent(Button_MED_Delete)))))))
                 .addContainerGap())
         );
         MEDICATION_PANELayout.setVerticalGroup(
             MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MEDICATION_PANELayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Label_MED_FormulaGuide)
-                .addGap(18, 18, 18)
-                .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MEDICATION_PANELayout.createSequentialGroup()
-                        .addComponent(Label_MED_FormulaAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(13, 13, 13)
-                        .addComponent(TextField_MED_FormulaAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Button_MED_FormulaAdd))
-                    .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26))
-            .addGroup(MEDICATION_PANELayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(Label_MED_MedsList)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(MEDICATION_PANELayout.createSequentialGroup()
-                        .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Label_MED_SelectDelete)
-                            .addComponent(Button_MED_Delete))
-                        .addGap(45, 45, 45)
-                        .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Label_MED_MedName)
-                            .addComponent(Label_MED_Species))
+                        .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(MEDICATION_PANELayout.createSequentialGroup()
+                                .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Label_MED_SelectDelete)
+                                    .addComponent(Button_MED_Delete))
+                                .addGap(31, 31, 31)
+                                .addComponent(Label_MED_MedName))
+                            .addGroup(MEDICATION_PANELayout.createSequentialGroup()
+                                .addGap(49, 49, 49)
+                                .addComponent(Label_MED_Species)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(TextField_MED_MedName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ComboBox_MED_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ComboBox_MED_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Label_MED_FormulaGuide)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(MEDICATION_PANELayout.createSequentialGroup()
+                                .addComponent(Label_MED_FormulaAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(13, 13, 13)
+                                .addComponent(TextField_MED_FormulaAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(Button_MED_FormulaAdd))
+                            .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(10, 10, 10)))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
         LOCATION_TAB.addTab("Medication ", MEDICATION_PANE);
-
-        LOGIN_PANE.setBackground(new java.awt.Color(217, 217, 217));
-        LOGIN_PANE.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createCompoundBorder(), null), null), null), null));
-
-        Label_LOGIN_Name.setText("Name");
-
-        PasswordField_LOGIN_Name.setText("jPasswordField1");
-
-        Label_LOGIN_Password.setText("Password");
-
-        LOGOPlacment_LOGIN.setText("LOGO");
-
-        javax.swing.GroupLayout LOGIN_PANELayout = new javax.swing.GroupLayout(LOGIN_PANE);
-        LOGIN_PANE.setLayout(LOGIN_PANELayout);
-        LOGIN_PANELayout.setHorizontalGroup(
-            LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LOGIN_PANELayout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(LOGOPlacment_LOGIN, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(LOGIN_PANELayout.createSequentialGroup()
-                        .addGroup(LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Label_LOGIN_Name)
-                            .addComponent(Label_LOGIN_Password))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(PasswordField_LOGIN_Name, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
-                            .addComponent(TextField_LOGIN_Name))))
-                .addContainerGap(91, Short.MAX_VALUE))
-        );
-        LOGIN_PANELayout.setVerticalGroup(
-            LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LOGIN_PANELayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_LOGIN_Name)
-                    .addComponent(TextField_LOGIN_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PasswordField_LOGIN_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Label_LOGIN_Password))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addComponent(LOGOPlacment_LOGIN, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35))
-        );
-
-        LOCATION_TAB.addTab("Login", LOGIN_PANE);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -620,7 +658,7 @@ public class UI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LOCATION_TAB, javax.swing.GroupLayout.PREFERRED_SIZE, 548, Short.MAX_VALUE)
+                .addComponent(LOCATION_TAB)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -656,10 +694,42 @@ public class UI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Button_MED_DeleteActionPerformed
 
-    public void updateSpeciesList () throws FileNotFoundException (
-     //populating list 
+    private void Button_SPECIES_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_SPECIES_DeleteActionPerformed
+        try {
+            // get stuff from frontend
+            String seletedSpecies = List_SPECIES_SpeciesList.getSelectedValue();
+            // send to backend
+            SpeciesManager.deleteSpecies(seletedSpecies) ;
+            // updata frontend
+            populateSpeciesList();
+            
+        } catch (Exception ex) {
+            Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+{
+            
+        }
+    }//GEN-LAST:event_Button_SPECIES_DeleteActionPerformed
+
+    private void Button_SPECIES_AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_SPECIES_AddActionPerformed
+
+        try {
+             // get stuff from frontend
+            String NewSpecies = TextField_SPECIES_Species.getText() ;
+            // send to backend
+            SpeciesManager.addSpecies(NewSpecies);
+            // updata frontend
+             populateSpeciesList();
+             
+        } catch (IOException ex) {
+            Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_Button_SPECIES_AddActionPerformed
+
     
-    )
+    
+    
     
     /**
      * @param args the command line arguments
@@ -691,7 +761,11 @@ public class UI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UI().setVisible(true);
+                try {
+                    new UI().setVisible(true);
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

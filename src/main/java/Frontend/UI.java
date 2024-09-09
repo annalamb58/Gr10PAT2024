@@ -4,6 +4,7 @@
  */
 package Frontend;
 
+import Backend.MedsManager;
 import Backend.SpeciesManager;
 import java.awt.Color;
 import java.io.FileNotFoundException;
@@ -33,7 +34,7 @@ public class UI extends javax.swing.JFrame {
         
         //Initialise xxxx Screen
         populateSpeciesList();
-        
+        populateMedsList();
     }
     
     public void populateSpeciesList() throws FileNotFoundException {
@@ -45,6 +46,16 @@ public class UI extends javax.swing.JFrame {
             
         }
         List_SPECIES_SpeciesList.setModel(speciesListModel);
+    }
+     public void populateMedsList() throws FileNotFoundException {
+        //populating the species list
+        String[] meds = MedsManager.getMedsList();
+        DefaultListModel medsListModel = new DefaultListModel();
+        for (int i = 0; i < meds.length; i++) {
+            medsListModel.addElement(meds[i]);
+            
+        }
+        List_MED_MedsList.setModel(medsListModel);
     }
 
     /**
@@ -691,7 +702,13 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_jFormattedTextField1ActionPerformed
 
     private void Button_MED_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_MED_DeleteActionPerformed
-        // TODO add your handling code here:
+        try {
+            String selectedMeds = List_MED_MedsList.getSelectedValue();
+            MedsManager.deleteMeds(selectedMeds);
+             populateMedsList() ;
+        } catch (Exception ex) {
+            Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_Button_MED_DeleteActionPerformed
 
     private void Button_SPECIES_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_SPECIES_DeleteActionPerformed

@@ -24,36 +24,35 @@ public class UI extends javax.swing.JFrame {
      */
     public UI() throws FileNotFoundException {
         initComponents();
-        
+
         //Initialise Species Screen
         //1. Get list from backend
         //2. Create DefaultListModel 
         //3. Add list to model
         //4, Set model
-        
-        
         //Initialise xxxx Screen
         populateSpeciesList();
         populateMedsList();
     }
-    
+
     public void populateSpeciesList() throws FileNotFoundException {
         //populating the species list
         String[] species = SpeciesManager.getSpeciesList();
         DefaultListModel speciesListModel = new DefaultListModel();
         for (int i = 0; i < species.length; i++) {
             speciesListModel.addElement(species[i]);
-            
+
         }
         List_SPECIES_SpeciesList.setModel(speciesListModel);
     }
-     public void populateMedsList() throws FileNotFoundException {
+
+    public void populateMedsList() throws FileNotFoundException {
         //populating the species list
         String[] meds = MedsManager.getMedsList();
         DefaultListModel medsListModel = new DefaultListModel();
         for (int i = 0; i < meds.length; i++) {
             medsListModel.addElement(meds[i]);
-            
+
         }
         List_MED_MedsList.setModel(medsListModel);
     }
@@ -540,6 +539,12 @@ public class UI extends javax.swing.JFrame {
         });
         jScrollPane10.setViewportView(List_MED_MedsList);
 
+        TextField_MED_MedName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextField_MED_MedNameActionPerformed(evt);
+            }
+        });
+
         Button_MED_FormulaAdd.setText("ADD");
         Button_MED_FormulaAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -681,8 +686,8 @@ public class UI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LOCATION_TABMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LOCATION_TABMouseClicked
-        LOCATION_TAB.setBackground(Color.red);
-       
+        //LOCATION_TAB.setBackground(Color.red);
+
     }//GEN-LAST:event_LOCATION_TABMouseClicked
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -705,7 +710,7 @@ public class UI extends javax.swing.JFrame {
         try {
             String selectedMeds = List_MED_MedsList.getSelectedValue();
             MedsManager.deleteMeds(selectedMeds);
-             populateMedsList() ;
+            populateMedsList();
         } catch (Exception ex) {
             Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -716,42 +721,54 @@ public class UI extends javax.swing.JFrame {
             // get stuff from frontend
             String seletedSpecies = List_SPECIES_SpeciesList.getSelectedValue();
             // send to backend
-            SpeciesManager.deleteSpecies(seletedSpecies) ;
+            SpeciesManager.deleteSpecies(seletedSpecies);
             // updata frontend
             populateSpeciesList();
-            
+
         } catch (Exception ex) {
             Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
         }
-{
-            
+        {
+
         }
     }//GEN-LAST:event_Button_SPECIES_DeleteActionPerformed
 
     private void Button_SPECIES_AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_SPECIES_AddActionPerformed
 
         try {
-             // get stuff from frontend
-            String NewSpecies = TextField_SPECIES_Species.getText() ;
+            // get stuff from frontend
+            String NewSpecies = TextField_SPECIES_Species.getText();
             // send to backend
             SpeciesManager.addSpecies(NewSpecies);
             // updata frontend
-             populateSpeciesList();
-             
+            populateSpeciesList();
+
         } catch (IOException ex) {
             Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }//GEN-LAST:event_Button_SPECIES_AddActionPerformed
 
+    private void TextField_MED_MedNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextField_MED_MedNameActionPerformed
+        try {
+            // get stuff from frontend
+            String NewMeds = TextField_MED_MedName.getText();
+            // send to backend
+            MedsManager.addMeds(NewMeds);
+            // updata frontend
+            populateMedsList();
+
+        } catch (IOException ex) {
+            Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     
-    
-    
-    
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
+    }//GEN-LAST:event_TextField_MED_MedNameActionPerformed
+
+/**
+ * @param args the command line arguments
+ */
+public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -765,13 +782,25 @@ public class UI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UI
+
+.class
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UI
+
+.class
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UI
+
+.class
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UI
+
+.class
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -781,7 +810,10 @@ public class UI extends javax.swing.JFrame {
                 try {
                     new UI().setVisible(true);
                 } catch (FileNotFoundException ex) {
-                    Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(UI
+
+.class
+.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });

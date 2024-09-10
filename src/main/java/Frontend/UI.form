@@ -1008,6 +1008,9 @@
               </SubComponents>
             </Container>
             <Component class="javax.swing.JTextField" name="TextField_MED_MedName">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TextField_MED_MedNameActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="TextField_MED_FormulaAdd">
             </Component>

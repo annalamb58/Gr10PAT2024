@@ -58,6 +58,17 @@ public class MedsManager {
         pw.write(line);
         pw.close();
 }
+       public static void addMeds (String meds) throws FileNotFoundException, IOException {
+        File medsFile = new File("data//meds.txt");
+        Scanner medsSc = new Scanner(medsFile);
+        
+        String line = medsSc.nextLine() + " " + meds ;
+        
+        FileWriter speciesFileWriter = new FileWriter("data//meds.txt");
+        PrintWriter pw = new PrintWriter(speciesFileWriter);
+        pw.write(line);
+        pw.close();
+    }
 }
 
   

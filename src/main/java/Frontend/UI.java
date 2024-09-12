@@ -417,6 +417,7 @@ public class UI extends javax.swing.JFrame {
 
         SPECIES_PANE.setBackground(new java.awt.Color(217, 217, 217));
 
+        List_SPECIES_SpeciesList.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         List_SPECIES_SpeciesList.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -576,6 +577,7 @@ public class UI extends javax.swing.JFrame {
 
         Label_MED_FormulaGuide.setText("Formula Guide");
 
+        TextArea_MED_FormulaGuide.setEditable(false);
         TextArea_MED_FormulaGuide.setColumns(20);
         TextArea_MED_FormulaGuide.setRows(5);
         jScrollPane15.setViewportView(TextArea_MED_FormulaGuide);

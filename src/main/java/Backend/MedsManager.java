@@ -4,22 +4,27 @@
  */
 package Backend;
 
+import Frontend.UI;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author Anna
  */
 public class MedsManager {
-   
+
     //default list
-     public static String[] getMedsList() throws FileNotFoundException {
-         File medsFile = new File("data//meds.txt");
+    public static String[] getMedsList() throws FileNotFoundException {
+        File medsFile = new File("data//meds.txt");
         Scanner medsSc = new Scanner(medsFile);
 
         // count
@@ -37,11 +42,10 @@ public class MedsManager {
             meds[i] = medsSc.next();
         }
         return meds;
-    
-    
-     }
-     
-       public static void deleteMeds(String meds) throws FileNotFoundException, IOException {
+
+    }
+
+    public static void deleteMeds(String meds) throws FileNotFoundException, IOException {
         File medsFile = new File("data//meds.txt");
         Scanner medsSc = new Scanner(medsFile);
 
@@ -57,19 +61,18 @@ public class MedsManager {
         PrintWriter pw = new PrintWriter(speciesFileWriter);
         pw.write(line);
         pw.close();
-}
-       public static void addMeds (String meds) throws FileNotFoundException, IOException {
+    }
+
+    public static void addMeds(String meds) throws FileNotFoundException, IOException {
         File medsFile = new File("data//meds.txt");
         Scanner medsSc = new Scanner(medsFile);
-        
-        String line = medsSc.nextLine() + " " + meds ;
-        
+
+        String line = medsSc.nextLine() + " " + meds;
+
         FileWriter speciesFileWriter = new FileWriter("data//meds.txt");
         PrintWriter pw = new PrintWriter(speciesFileWriter);
         pw.write(line);
         pw.close();
     }
+
 }
-
-  
-

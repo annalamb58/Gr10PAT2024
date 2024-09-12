@@ -7,10 +7,15 @@ package Frontend;
 import Backend.MedsManager;
 import Backend.SpeciesManager;
 import java.awt.Color;
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 
 /**
@@ -31,22 +36,29 @@ public class UI extends javax.swing.JFrame {
         //3. Add list to model
         //4, Set model
         //Initialise xxxx Screen
-        populateSpeciesList();
-        populateMedsList();
+        updateSpeciesList();
+        updateMedsList();
     }
 
-    public void populateSpeciesList() throws FileNotFoundException {
+    public void updateSpeciesList() throws FileNotFoundException {
         //populating the species list
         String[] species = SpeciesManager.getSpeciesList();
+        
+        //Populate lists
         DefaultListModel speciesListModel = new DefaultListModel();
         for (int i = 0; i < species.length; i++) {
             speciesListModel.addElement(species[i]);
 
         }
         List_SPECIES_SpeciesList.setModel(speciesListModel);
+        
+        //Populate combo boxes
+        DefaultComboBoxModel comboBoxModel = new DefaultComboBoxModel(species);
+        ComboBox_MED_Species.setModel(comboBoxModel);
+        ComboBox_CAL_Species.setModel(comboBoxModel);
     }
 
-    public void populateMedsList() throws FileNotFoundException {
+    public void updateMedsList() throws FileNotFoundException {
         //populating the species list
         String[] meds = MedsManager.getMedsList();
         DefaultListModel medsListModel = new DefaultListModel();
@@ -55,6 +67,12 @@ public class UI extends javax.swing.JFrame {
 
         }
         List_MED_MedsList.setModel(medsListModel);
+    }
+    
+    public void populateMedsSpeciesComboBox(String species) throws FileNotFoundException {
+
+        
+        
     }
 
     /**
@@ -687,7 +705,7 @@ public class UI extends javax.swing.JFrame {
 
     private void LOCATION_TABMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LOCATION_TABMouseClicked
         //LOCATION_TAB.setBackground(Color.red);
-
+    
     }//GEN-LAST:event_LOCATION_TABMouseClicked
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -710,7 +728,7 @@ public class UI extends javax.swing.JFrame {
         try {
             String selectedMeds = List_MED_MedsList.getSelectedValue();
             MedsManager.deleteMeds(selectedMeds);
-            populateMedsList();
+            updateMedsList();
         } catch (Exception ex) {
             Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -723,7 +741,7 @@ public class UI extends javax.swing.JFrame {
             // send to backend
             SpeciesManager.deleteSpecies(seletedSpecies);
             // updata frontend
-            populateSpeciesList();
+            updateSpeciesList();
 
         } catch (Exception ex) {
             Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
@@ -741,7 +759,7 @@ public class UI extends javax.swing.JFrame {
             // send to backend
             SpeciesManager.addSpecies(NewSpecies);
             // updata frontend
-            populateSpeciesList();
+            updateSpeciesList();
 
         } catch (IOException ex) {
             Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
@@ -756,7 +774,7 @@ public class UI extends javax.swing.JFrame {
             // send to backend
             MedsManager.addMeds(NewMeds);
             // updata frontend
-            populateMedsList();
+            updateMedsList();
 
         } catch (IOException ex) {
             Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);

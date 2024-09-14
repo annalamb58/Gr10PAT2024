@@ -30,20 +30,21 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         TextField_LOGIN_Username = new javax.swing.JTextField();
         PasswordField_LOGIN_Password = new javax.swing.JPasswordField();
         Label_LOGIN_Username = new javax.swing.JLabel();
         Label_LOGIN_Password = new javax.swing.JLabel();
         Button_LOGIN_Login = new javax.swing.JButton();
 
+        jLabel1.setText("jLabel1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(217, 217, 217));
 
-        PasswordField_LOGIN_Password.setText("jPasswordField1");
+        Label_LOGIN_Username.setText("Username:");
 
-        Label_LOGIN_Username.setText("Username");
-
-        Label_LOGIN_Password.setText("Password");
+        Label_LOGIN_Password.setText("Password:");
 
         Button_LOGIN_Login.setText("Login");
         Button_LOGIN_Login.addActionListener(new java.awt.event.ActionListener() {
@@ -57,35 +58,35 @@ public class Login extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(214, Short.MAX_VALUE)
+                .addContainerGap(243, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Label_LOGIN_Username, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(Label_LOGIN_Password, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(46, 46, 46)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(PasswordField_LOGIN_Password)
+                            .addComponent(PasswordField_LOGIN_Password, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
                             .addComponent(TextField_LOGIN_Username))
                         .addGap(28, 28, 28))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(Button_LOGIN_Login)
-                        .addGap(50, 50, 50))))
+                        .addGap(66, 66, 66))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(78, 78, 78)
+                .addGap(102, 102, 102)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TextField_LOGIN_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Label_LOGIN_Username))
-                .addGap(18, 18, 18)
+                    .addComponent(Label_LOGIN_Username)
+                    .addComponent(TextField_LOGIN_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PasswordField_LOGIN_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Label_LOGIN_Password))
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addComponent(Button_LOGIN_Login)
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
 
         pack();
@@ -97,9 +98,18 @@ public class Login extends javax.swing.JFrame {
             String user = TextField_LOGIN_Username.getText();
             String password = PasswordField_LOGIN_Password.getText();
             //Check withh backend
-            UserManager.checkLogin(user, password);
+            if(UserManager.checkLogin(user, password)){
+                //Move to next screen
+                new UI().setVisible(true);
+                //Closes Login screen
+                this.dispose();
+            }
+             
+            
+            
         } catch (Exception ex) {
             Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_Button_LOGIN_LoginActionPerformed
 
     /**
@@ -144,5 +154,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel Label_LOGIN_Username;
     private javax.swing.JPasswordField PasswordField_LOGIN_Password;
     private javax.swing.JTextField TextField_LOGIN_Username;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

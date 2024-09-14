@@ -713,7 +713,22 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_ComboBox_CAL_SpeciesActionPerformed
 
     private void Button_MED_FormulaAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_MED_FormulaAddActionPerformed
-        // TODO add your handling code here:
+        try {
+            // get stuff from frontend
+            String NewMed = TextField_MED_MedName.getText();
+            String newSpecies = (String)ComboBox_MED_Species.getSelectedItem();
+            String NewFormula = TextField_MED_FormulaAdd.getText();
+            // send to backend
+            MedsManager.addNewMed(NewMed, newSpecies, NewFormula);
+            // update frontend
+            updateMedsList();
+            TextField_MED_MedName.setText("");
+
+        } catch (IOException ex) {
+            Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
     }//GEN-LAST:event_Button_MED_FormulaAddActionPerformed
 
     private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
@@ -756,6 +771,7 @@ public class UI extends javax.swing.JFrame {
             SpeciesManager.addSpecies(NewSpecies);
             // updata frontend
             updateSpeciesList();
+            TextField_SPECIES_Species.setText("");
 
         } catch (IOException ex) {
             Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
@@ -767,8 +783,11 @@ public class UI extends javax.swing.JFrame {
         try {
             // get stuff from frontend
             String NewMeds = TextField_MED_MedName.getText();
+           String NewMed = TextField_MED_MedName.getText();
+            String newSpecies = (String)ComboBox_MED_Species.getSelectedItem();
+            String NewFormula = TextField_MED_FormulaAdd.getText();
             // send to backend
-            MedsManager.addMeds(NewMeds);
+            MedsManager.addNewMed(NewMeds, newSpecies, NewFormula);
             // updata frontend
             updateMedsList();
 

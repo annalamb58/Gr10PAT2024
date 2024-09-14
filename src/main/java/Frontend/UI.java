@@ -138,6 +138,12 @@ public class UI extends javax.swing.JFrame {
         jTextArea10 = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        PasswordField_LOGIN_Name = new javax.swing.JPasswordField();
+        LOGIN_PANE = new javax.swing.JPanel();
+        Label_LOGIN_Name = new javax.swing.JLabel();
+        Label_LOGIN_Password = new javax.swing.JLabel();
+        TextField_LOGIN_Name = new javax.swing.JTextField();
+        LOGOPlacment_LOGIN = new javax.swing.JTextField();
         LOCATION_TAB = new javax.swing.JTabbedPane();
         DOSAGE_CAL_PANE = new javax.swing.JPanel();
         Label_CAL_Speices = new javax.swing.JLabel();
@@ -158,12 +164,6 @@ public class UI extends javax.swing.JFrame {
         Button_SPECIES_Add = new javax.swing.JButton();
         Label_SPECIES_SelectDelete = new javax.swing.JLabel();
         Button_SPECIES_Delete = new javax.swing.JButton();
-        LOGIN_PANE = new javax.swing.JPanel();
-        Label_LOGIN_Name = new javax.swing.JLabel();
-        PasswordField_LOGIN_Name = new javax.swing.JPasswordField();
-        Label_LOGIN_Password = new javax.swing.JLabel();
-        TextField_LOGIN_Name = new javax.swing.JTextField();
-        LOGOPlacment_LOGIN = new javax.swing.JTextField();
         MEDICATION_PANE = new javax.swing.JPanel();
         jScrollPane10 = new javax.swing.JScrollPane();
         List_MED_MedsList = new javax.swing.JList<>();
@@ -329,6 +329,47 @@ public class UI extends javax.swing.JFrame {
             .addGap(0, 353, Short.MAX_VALUE)
         );
 
+        PasswordField_LOGIN_Name.setText("jPasswordField1");
+
+        LOGIN_PANE.setBackground(new java.awt.Color(217, 217, 217));
+        LOGIN_PANE.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createCompoundBorder(), null), null), null), null));
+
+        Label_LOGIN_Name.setText("Name");
+
+        Label_LOGIN_Password.setText("Password");
+
+        LOGOPlacment_LOGIN.setText("LOGO");
+
+        javax.swing.GroupLayout LOGIN_PANELayout = new javax.swing.GroupLayout(LOGIN_PANE);
+        LOGIN_PANE.setLayout(LOGIN_PANELayout);
+        LOGIN_PANELayout.setHorizontalGroup(
+            LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LOGIN_PANELayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(LOGOPlacment_LOGIN, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(LOGIN_PANELayout.createSequentialGroup()
+                        .addGroup(LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Label_LOGIN_Name)
+                            .addComponent(Label_LOGIN_Password))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(TextField_LOGIN_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(117, Short.MAX_VALUE))
+        );
+        LOGIN_PANELayout.setVerticalGroup(
+            LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LOGIN_PANELayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Label_LOGIN_Name)
+                    .addComponent(TextField_LOGIN_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addComponent(Label_LOGIN_Password)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addComponent(LOGOPlacment_LOGIN, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         LOCATION_TAB.setBackground(new java.awt.Color(217, 217, 217));
@@ -379,9 +420,9 @@ public class UI extends javax.swing.JFrame {
                             .addComponent(Label_CAL_Medication))
                         .addGap(56, 56, 56)
                         .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ComboBox_CAL_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TextField_CAL_Medication, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TextField_CAL_Weight, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(TextField_CAL_Weight, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ComboBox_CAL_Species, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(DOSAGE_CAL_PANELayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -395,7 +436,7 @@ public class UI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Label_CAL_Speices)
-                    .addComponent(ComboBox_CAL_Species, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ComboBox_CAL_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Label_CAL_Weight)
@@ -410,7 +451,7 @@ public class UI extends javax.swing.JFrame {
                 .addComponent(Label_CAL_Dosage)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TextField_CAL_Dosage, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         LOCATION_TAB.addTab("Dosage Calculator", DOSAGE_CAL_PANE);
@@ -500,53 +541,6 @@ public class UI extends javax.swing.JFrame {
         );
 
         LOCATION_TAB.addTab("Species ", SPECIES_PANE);
-
-        LOGIN_PANE.setBackground(new java.awt.Color(217, 217, 217));
-        LOGIN_PANE.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createCompoundBorder(), null), null), null), null));
-
-        Label_LOGIN_Name.setText("Name");
-
-        PasswordField_LOGIN_Name.setText("jPasswordField1");
-
-        Label_LOGIN_Password.setText("Password");
-
-        LOGOPlacment_LOGIN.setText("LOGO");
-
-        javax.swing.GroupLayout LOGIN_PANELayout = new javax.swing.GroupLayout(LOGIN_PANE);
-        LOGIN_PANE.setLayout(LOGIN_PANELayout);
-        LOGIN_PANELayout.setHorizontalGroup(
-            LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LOGIN_PANELayout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(LOGOPlacment_LOGIN, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(LOGIN_PANELayout.createSequentialGroup()
-                        .addGroup(LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Label_LOGIN_Name)
-                            .addComponent(Label_LOGIN_Password))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(PasswordField_LOGIN_Name, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
-                            .addComponent(TextField_LOGIN_Name))))
-                .addContainerGap(117, Short.MAX_VALUE))
-        );
-        LOGIN_PANELayout.setVerticalGroup(
-            LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LOGIN_PANELayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_LOGIN_Name)
-                    .addComponent(TextField_LOGIN_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PasswordField_LOGIN_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Label_LOGIN_Password))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addComponent(LOGOPlacment_LOGIN, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35))
-        );
-
-        LOCATION_TAB.addTab("Login", LOGIN_PANE);
 
         MEDICATION_PANE.setBackground(new java.awt.Color(217, 217, 217));
 

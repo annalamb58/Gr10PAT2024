@@ -21,8 +21,8 @@ import java.util.logging.Logger;
  * @author Anna
  */
 public class MedsManager {
-
-    //default list
+  
+     //default list
     public static String[] getMedsList() throws FileNotFoundException {
         File medsFile = new File("data//meds.txt");
         Scanner medsSc = new Scanner(medsFile);
@@ -63,16 +63,46 @@ public class MedsManager {
         pw.close();
     }
 
-    public static void addMeds(String meds) throws FileNotFoundException, IOException {
+    public static void addNewMed(String meds, String species, String formula) throws FileNotFoundException, IOException {
         File medsFile = new File("data//meds.txt");
         Scanner medsSc = new Scanner(medsFile);
 
-        String line = medsSc.nextLine() + " " + meds;
+        String line = medsSc.nextLine() + " " + meds + " " + species + " " + formula ;
 
         FileWriter speciesFileWriter = new FileWriter("data//meds.txt");
         PrintWriter pw = new PrintWriter(speciesFileWriter);
         pw.write(line);
         pw.close();
+        
+        
     }
+//    public static void addNameofMed(String meds) throws FileNotFoundException, IOException {
+//        File medsFile = new File("data//meds.txt");
+//        Scanner medsSc = new Scanner(medsFile);
+//
+//        String line = medsSc.nextLine() + " " + meds  ;
+//
+//        FileWriter speciesFileWriter = new FileWriter("data//meds.txt");
+//        PrintWriter pw = new PrintWriter(speciesFileWriter);
+//        pw.write(line);
+//        pw.close();
+//        
+        
+    }
+    
 
-}
+//    public static void findFormula(String givenFormula) throws FileNotFoundException, IOException {
+//        File formulaFile = new File("data//combined.txt");
+//        Scanner formulaSc = new Scanner(formulaFile).useDelimiter("#");
+//        
+//        while (formulaSc.hasNext()){
+//            String line = formulaSc.nextLine();
+//            Scanner lineSc = new Scanner(line);
+//            
+//            lineSc.next();
+//            formulaSc.next();
+//            String formula = formulaSc.next();
+//        }
+//        
+    
+    

@@ -69,8 +69,8 @@ public class MedsManager {
 
         String line = medsSc.nextLine() + " " + meds + " " + species + " " + formula ;
 
-        FileWriter speciesFileWriter = new FileWriter("data//meds.txt");
-        PrintWriter pw = new PrintWriter(speciesFileWriter);
+        FileWriter medsFileWriter = new FileWriter("data//meds.txt");
+        PrintWriter pw = new PrintWriter(medsFileWriter);
         pw.write(line);
         pw.close();
         

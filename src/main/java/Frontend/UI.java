@@ -780,20 +780,22 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_Button_SPECIES_AddActionPerformed
 
     private void TextField_MED_MedNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextField_MED_MedNameActionPerformed
-        try {
-            // get stuff from frontend
-            String NewMeds = TextField_MED_MedName.getText();
-           String NewMed = TextField_MED_MedName.getText();
-            String newSpecies = (String)ComboBox_MED_Species.getSelectedItem();
-            String NewFormula = TextField_MED_FormulaAdd.getText();
-            // send to backend
-            MedsManager.addNewMed(NewMeds, newSpecies, NewFormula);
-            // updata frontend
-            updateMedsList();
-
-        } catch (IOException ex) {
-            Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
-        }
+// This is when you click enter it show add it without clicking thebutton 
+// This code is not needed but in case it is needed in the future it has been commented and not deleted
+//        try {
+//            // get stuff from frontend
+//            String NewMeds = TextField_MED_MedName.getText();
+//           String NewMed = TextField_MED_MedName.getText();
+//            String newSpecies = (String)ComboBox_MED_Species.getSelectedItem();
+//            String NewFormula = TextField_MED_FormulaAdd.getText();
+//            // send to backend
+//            MedsManager.addNewMed(NewMeds, newSpecies, NewFormula);
+//            // updata frontend
+//            updateMedsList();
+//
+//        } catch (IOException ex) {
+//            Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
+//        }
 
     
     }//GEN-LAST:event_TextField_MED_MedNameActionPerformed

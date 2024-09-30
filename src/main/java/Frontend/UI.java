@@ -38,6 +38,10 @@ public class UI extends javax.swing.JFrame {
         //Initialise xxxx Screen
         updateSpeciesList();
         updateMedsList();
+        buttonGroup_MED_Doses.add(RadioButton_MED_HighDose);
+        buttonGroup_MED_Doses.add(RadioButton_MED_LowDose);
+        buttonGroup_CAL_Doses.add(RadioButton_CAL_HighDose);
+        buttonGroup_CAL_Doses.add(RadioButton_CAL_LowDose);
     }
 
     public void updateSpeciesList() throws FileNotFoundException {
@@ -84,66 +88,8 @@ public class UI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
-        jInternalFrame1 = new javax.swing.JInternalFrame();
-        jSplitPane1 = new javax.swing.JSplitPane();
-        jTabbedPane3 = new javax.swing.JTabbedPane();
-        jLabel1 = new javax.swing.JLabel();
-        jTabbedPane4 = new javax.swing.JTabbedPane();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        jTextArea5 = new javax.swing.JTextArea();
-        jScrollPane11 = new javax.swing.JScrollPane();
-        jTextArea7 = new javax.swing.JTextArea();
-        jScrollPane14 = new javax.swing.JScrollPane();
-        jTextArea9 = new javax.swing.JTextArea();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jScrollPane16 = new javax.swing.JScrollPane();
-        jTextPane2 = new javax.swing.JTextPane();
-        jTabbedPane5 = new javax.swing.JTabbedPane();
-        jLabel7 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jScrollPane9 = new javax.swing.JScrollPane();
-        jTextArea6 = new javax.swing.JTextArea();
-        jTextField1 = new javax.swing.JTextField();
-        jScrollPane13 = new javax.swing.JScrollPane();
-        jTextArea8 = new javax.swing.JTextArea();
-        jButton3 = new javax.swing.JButton();
-        jTextField7 = new javax.swing.JTextField();
-        jScrollPane17 = new javax.swing.JScrollPane();
-        jEditorPane1 = new javax.swing.JEditorPane();
-        Button_MED_MedsDelete = new javax.swing.JButton();
-        jTextField8 = new javax.swing.JTextField();
-        jPopupMenu1 = new javax.swing.JPopupMenu();
-        jScrollPane18 = new javax.swing.JScrollPane();
-        jTextArea10 = new javax.swing.JTextArea();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        PasswordField_LOGIN_Name = new javax.swing.JPasswordField();
-        LOGIN_PANE = new javax.swing.JPanel();
-        Label_LOGIN_Name = new javax.swing.JLabel();
-        Label_LOGIN_Password = new javax.swing.JLabel();
-        TextField_LOGIN_Name = new javax.swing.JTextField();
-        LOGOPlacment_LOGIN = new javax.swing.JTextField();
+        buttonGroup_MED_Doses = new javax.swing.ButtonGroup();
+        buttonGroup_CAL_Doses = new javax.swing.ButtonGroup();
         LOCATION_TAB = new javax.swing.JTabbedPane();
         DOSAGE_CAL_PANE = new javax.swing.JPanel();
         Label_CAL_Speices = new javax.swing.JLabel();
@@ -182,197 +128,8 @@ public class UI extends javax.swing.JFrame {
         ComboBox_MED_Species = new javax.swing.JComboBox<>();
         Label_MED_SelectDelete = new javax.swing.JLabel();
         Button_MED_Delete = new javax.swing.JButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        jScrollPane2.setViewportView(jTree1);
-
-        jInternalFrame1.setVisible(true);
-
-        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
-        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
-        jInternalFrame1Layout.setHorizontalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jInternalFrame1Layout.setVerticalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        jLabel1.setText("jLabel1");
-        jTabbedPane3.addTab("Dosage Calulatoer", jLabel1);
-        jTabbedPane3.addTab("tab2", jTabbedPane4);
-
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jTextArea3.setText("glllv.v;v.;';b'\n]");
-        jScrollPane5.setViewportView(jTextArea3);
-
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jTextArea2.setText("s");
-        jScrollPane4.setViewportView(jTextArea2);
-
-        jTextArea4.setColumns(20);
-        jTextArea4.setRows(5);
-        jScrollPane6.setViewportView(jTextArea4);
-
-        jScrollPane7.setViewportView(jTextPane1);
-
-        jTextArea5.setColumns(20);
-        jTextArea5.setRows(5);
-        jScrollPane8.setViewportView(jTextArea5);
-
-        jTextArea7.setColumns(20);
-        jTextArea7.setRows(5);
-        jScrollPane11.setViewportView(jTextArea7);
-
-        jTextArea9.setColumns(20);
-        jTextArea9.setRows(5);
-        jScrollPane14.setViewportView(jTextArea9);
-
-        jLabel10.setText("jLabel10");
-
-        jLabel11.setText("jLabel11");
-
-        jButton2.setText("jButton2");
-
-        jFormattedTextField1.setText("jFormattedTextField1");
-        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField1ActionPerformed(evt);
-            }
-        });
-
-        jFormattedTextField2.setText("jFormattedTextField2");
-
-        jLabel8.setText("Select a Medicaton from the list then click the delete buttion to delete it");
-
-        jScrollPane16.setViewportView(jTextPane2);
-
-        jLabel7.setText("jLabel7");
-
-        jTextArea1.setBackground(new java.awt.Color(251, 193, 110));
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane3.setViewportView(jTextArea1);
-
-        jTextArea6.setColumns(20);
-        jTextArea6.setRows(5);
-        jScrollPane9.setViewportView(jTextArea6);
-
-        jTextField1.setText("jTextField1");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        jTextArea8.setColumns(20);
-        jTextArea8.setRows(5);
-        jScrollPane13.setViewportView(jTextArea8);
-
-        jButton3.setText("jButton3");
-
-        jTextField7.setText("jTextField7");
-
-        jScrollPane17.setViewportView(jEditorPane1);
-
-        Button_MED_MedsDelete.setText("DELETE");
-
-        jTextField8.setText("jTextField8");
-
-        jTextArea10.setColumns(20);
-        jTextArea10.setRows(5);
-        jScrollPane18.setViewportView(jTextArea10);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        jPanel2.setBackground(new java.awt.Color(217, 217, 217));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 353, Short.MAX_VALUE)
-        );
-
-        PasswordField_LOGIN_Name.setText("jPasswordField1");
-
-        LOGIN_PANE.setBackground(new java.awt.Color(217, 217, 217));
-        LOGIN_PANE.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createCompoundBorder(), null), null), null), null));
-
-        Label_LOGIN_Name.setText("Name");
-
-        Label_LOGIN_Password.setText("Password");
-
-        LOGOPlacment_LOGIN.setText("LOGO");
-
-        javax.swing.GroupLayout LOGIN_PANELayout = new javax.swing.GroupLayout(LOGIN_PANE);
-        LOGIN_PANE.setLayout(LOGIN_PANELayout);
-        LOGIN_PANELayout.setHorizontalGroup(
-            LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LOGIN_PANELayout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(LOGOPlacment_LOGIN, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(LOGIN_PANELayout.createSequentialGroup()
-                        .addGroup(LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Label_LOGIN_Name)
-                            .addComponent(Label_LOGIN_Password))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(TextField_LOGIN_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(117, Short.MAX_VALUE))
-        );
-        LOGIN_PANELayout.setVerticalGroup(
-            LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LOGIN_PANELayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(LOGIN_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_LOGIN_Name)
-                    .addComponent(TextField_LOGIN_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addComponent(Label_LOGIN_Password)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                .addComponent(LOGOPlacment_LOGIN, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35))
-        );
+        RadioButton_MED_HighDose = new javax.swing.JRadioButton();
+        RadioButton_MED_LowDose = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -516,10 +273,6 @@ public class UI extends javax.swing.JFrame {
                     .addGroup(SPECIES_PANELayout.createSequentialGroup()
                         .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(SPECIES_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SPECIES_PANELayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Button_SPECIES_Add)
-                                .addGap(118, 118, 118))
                             .addGroup(SPECIES_PANELayout.createSequentialGroup()
                                 .addGroup(SPECIES_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(SPECIES_PANELayout.createSequentialGroup()
@@ -532,7 +285,11 @@ public class UI extends javax.swing.JFrame {
                                         .addComponent(Label_SPECIES_SelectDelete)
                                         .addGap(18, 18, 18)
                                         .addComponent(Button_SPECIES_Delete)))
-                                .addGap(0, 81, Short.MAX_VALUE))))))
+                                .addGap(0, 81, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SPECIES_PANELayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Button_SPECIES_Add)
+                                .addGap(143, 143, 143))))))
         );
         SPECIES_PANELayout.setVerticalGroup(
             SPECIES_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -543,9 +300,9 @@ public class UI extends javax.swing.JFrame {
                         .addGroup(SPECIES_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(TextField_SPECIES_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Label_SPECIES_Name))
-                        .addGap(34, 34, 34)
+                        .addGap(32, 32, 32)
                         .addComponent(Button_SPECIES_Add)
-                        .addGap(50, 50, 50)
+                        .addGap(52, 52, 52)
                         .addGroup(SPECIES_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Label_SPECIES_SelectDelete)
                             .addComponent(Button_SPECIES_Delete)))
@@ -609,9 +366,9 @@ public class UI extends javax.swing.JFrame {
             }
         });
 
-        jRadioButton3.setText("High Dose");
+        RadioButton_MED_HighDose.setText("High Dose");
 
-        jRadioButton4.setText("Low Dose");
+        RadioButton_MED_LowDose.setText("Low Dose");
 
         javax.swing.GroupLayout MEDICATION_PANELayout = new javax.swing.GroupLayout(MEDICATION_PANE);
         MEDICATION_PANE.setLayout(MEDICATION_PANELayout);
@@ -629,10 +386,6 @@ public class UI extends javax.swing.JFrame {
                             .addGroup(MEDICATION_PANELayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(Label_MED_MedName)
-                                .addGap(70, 70, 70)
-                                .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ComboBox_MED_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Label_MED_Species))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MEDICATION_PANELayout.createSequentialGroup()
                                 .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -642,13 +395,16 @@ public class UI extends javax.swing.JFrame {
                                     .addGroup(MEDICATION_PANELayout.createSequentialGroup()
                                         .addGap(18, 18, 18)
                                         .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(TextField_MED_MedName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jScrollPane15, javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, MEDICATION_PANELayout.createSequentialGroup()
-                                                .addComponent(jRadioButton3)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jRadioButton4))
-                                            .addComponent(Label_MED_FormulaGuide, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jScrollPane15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))))
+                                                .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(TextField_MED_MedName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(Label_MED_FormulaGuide, javax.swing.GroupLayout.Alignment.LEADING))
+                                                .addGap(0, 0, Short.MAX_VALUE))
+                                            .addGroup(MEDICATION_PANELayout.createSequentialGroup()
+                                                .addComponent(RadioButton_MED_HighDose)
+                                                .addGap(36, 36, 36)
+                                                .addComponent(RadioButton_MED_LowDose)))))
                                 .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(MEDICATION_PANELayout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -657,7 +413,9 @@ public class UI extends javax.swing.JFrame {
                                             .addComponent(TextField_MED_FormulaAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MEDICATION_PANELayout.createSequentialGroup()
                                                 .addComponent(Button_MED_FormulaAdd)
-                                                .addGap(40, 40, 40))))
+                                                .addGap(40, 40, 40))
+                                            .addComponent(ComboBox_MED_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Label_MED_Species)))
                                     .addGroup(MEDICATION_PANELayout.createSequentialGroup()
                                         .addGap(32, 32, 32)
                                         .addComponent(Button_MED_Delete)))))))
@@ -672,25 +430,22 @@ public class UI extends javax.swing.JFrame {
                 .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(MEDICATION_PANELayout.createSequentialGroup()
-                        .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(MEDICATION_PANELayout.createSequentialGroup()
-                                .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Label_MED_SelectDelete)
-                                    .addComponent(Button_MED_Delete))
-                                .addGap(31, 31, 31)
-                                .addComponent(Label_MED_MedName))
-                            .addGroup(MEDICATION_PANELayout.createSequentialGroup()
-                                .addGap(49, 49, 49)
-                                .addComponent(Label_MED_Species)))
+                        .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Label_MED_SelectDelete)
+                            .addComponent(Button_MED_Delete))
+                        .addGap(31, 31, 31)
+                        .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Label_MED_MedName)
+                            .addComponent(Label_MED_Species))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(TextField_MED_MedName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ComboBox_MED_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton3)
-                            .addComponent(jRadioButton4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(RadioButton_MED_HighDose)
+                            .addComponent(RadioButton_MED_LowDose))
+                        .addGap(28, 28, 28)
                         .addComponent(Label_MED_FormulaGuide)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -729,10 +484,6 @@ public class UI extends javax.swing.JFrame {
     
     }//GEN-LAST:event_LOCATION_TABMouseClicked
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     private void ComboBox_CAL_SpeciesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBox_CAL_SpeciesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ComboBox_CAL_SpeciesActionPerformed
@@ -743,8 +494,9 @@ public class UI extends javax.swing.JFrame {
             String NewMed = TextField_MED_MedName.getText();
             String newSpecies = (String)ComboBox_MED_Species.getSelectedItem();
             String NewFormula = TextField_MED_FormulaAdd.getText();
+            //String NewDose = buttonGroup_MED_Doses.toString() ;
             // send to backend
-            MedsManager.addNewMed(NewMed, newSpecies, NewFormula);
+            MedsManager.addNewMed(NewMed, newSpecies, NewFormula); // , NewDose
             // update frontend
             updateMedsList();
             TextField_MED_MedName.setText("");
@@ -755,10 +507,6 @@ public class UI extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_Button_MED_FormulaAddActionPerformed
-
-    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
 
     private void Button_MED_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_MED_DeleteActionPerformed
         try {
@@ -883,21 +631,16 @@ public static void main(String args[]) {
     private javax.swing.JButton Button_CAL_Calculate;
     private javax.swing.JButton Button_MED_Delete;
     private javax.swing.JButton Button_MED_FormulaAdd;
-    private javax.swing.JButton Button_MED_MedsDelete;
     private javax.swing.JButton Button_SPECIES_Add;
     private javax.swing.JButton Button_SPECIES_Delete;
     private javax.swing.JComboBox<String> ComboBox_CAL_Species;
     private javax.swing.JComboBox<String> ComboBox_MED_Species;
     private javax.swing.JPanel DOSAGE_CAL_PANE;
     private javax.swing.JTabbedPane LOCATION_TAB;
-    private javax.swing.JPanel LOGIN_PANE;
-    private javax.swing.JTextField LOGOPlacment_LOGIN;
     private javax.swing.JLabel Label_CAL_Dosage;
     private javax.swing.JLabel Label_CAL_Medication;
     private javax.swing.JLabel Label_CAL_Speices;
     private javax.swing.JLabel Label_CAL_Weight;
-    private javax.swing.JLabel Label_LOGIN_Name;
-    private javax.swing.JLabel Label_LOGIN_Password;
     private javax.swing.JLabel Label_MED_FormulaAdd;
     private javax.swing.JLabel Label_MED_FormulaGuide;
     private javax.swing.JLabel Label_MED_MedName;
@@ -910,75 +653,22 @@ public static void main(String args[]) {
     private javax.swing.JList<String> List_MED_MedsList;
     private javax.swing.JList<String> List_SPECIES_SpeciesList;
     private javax.swing.JPanel MEDICATION_PANE;
-    private javax.swing.JPasswordField PasswordField_LOGIN_Name;
     private javax.swing.JRadioButton RadioButton_CAL_HighDose;
     private javax.swing.JRadioButton RadioButton_CAL_LowDose;
+    private javax.swing.JRadioButton RadioButton_MED_HighDose;
+    private javax.swing.JRadioButton RadioButton_MED_LowDose;
     private javax.swing.JPanel SPECIES_PANE;
     private javax.swing.JTextArea TextArea_MED_FormulaGuide;
     private javax.swing.JTextField TextField_CAL_Dosage;
     private javax.swing.JTextField TextField_CAL_Medication;
     private javax.swing.JTextField TextField_CAL_Weight;
-    private javax.swing.JTextField TextField_LOGIN_Name;
     private javax.swing.JTextField TextField_MED_FormulaAdd;
     private javax.swing.JTextField TextField_MED_MedName;
     private javax.swing.JTextField TextField_SPECIES_Species;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JEditorPane jEditorPane1;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
-    private javax.swing.JInternalFrame jInternalFrame1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPopupMenu jPopupMenu1;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.ButtonGroup buttonGroup_CAL_Doses;
+    private javax.swing.ButtonGroup buttonGroup_MED_Doses;
     private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
-    private javax.swing.JScrollPane jScrollPane13;
-    private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
-    private javax.swing.JScrollPane jScrollPane16;
-    private javax.swing.JScrollPane jScrollPane17;
-    private javax.swing.JScrollPane jScrollPane18;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTabbedPane jTabbedPane4;
-    private javax.swing.JTabbedPane jTabbedPane5;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea10;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextArea jTextArea5;
-    private javax.swing.JTextArea jTextArea6;
-    private javax.swing.JTextArea jTextArea7;
-    private javax.swing.JTextArea jTextArea8;
-    private javax.swing.JTextArea jTextArea9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JTextPane jTextPane2;
-    private javax.swing.JTree jTree1;
     // End of variables declaration//GEN-END:variables
 }

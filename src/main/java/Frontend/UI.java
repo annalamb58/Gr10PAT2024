@@ -155,6 +155,8 @@ public class UI extends javax.swing.JFrame {
         Label_CAL_Dosage = new javax.swing.JLabel();
         TextField_CAL_Weight = new javax.swing.JTextField();
         TextField_CAL_Medication = new javax.swing.JTextField();
+        RadioButton_CAL_HighDose = new javax.swing.JRadioButton();
+        RadioButton_CAL_LowDose = new javax.swing.JRadioButton();
         SPECIES_PANE = new javax.swing.JPanel();
         jScrollPane12 = new javax.swing.JScrollPane();
         List_SPECIES_SpeciesList = new javax.swing.JList<>();
@@ -180,6 +182,8 @@ public class UI extends javax.swing.JFrame {
         ComboBox_MED_Species = new javax.swing.JComboBox<>();
         Label_MED_SelectDelete = new javax.swing.JLabel();
         Button_MED_Delete = new javax.swing.JButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -402,6 +406,10 @@ public class UI extends javax.swing.JFrame {
 
         Label_CAL_Dosage.setText("Dosage");
 
+        RadioButton_CAL_HighDose.setText("High Dose ");
+
+        RadioButton_CAL_LowDose.setText("Low Dose");
+
         javax.swing.GroupLayout DOSAGE_CAL_PANELayout = new javax.swing.GroupLayout(DOSAGE_CAL_PANE);
         DOSAGE_CAL_PANE.setLayout(DOSAGE_CAL_PANELayout);
         DOSAGE_CAL_PANELayout.setHorizontalGroup(
@@ -415,14 +423,20 @@ public class UI extends javax.swing.JFrame {
                     .addGroup(DOSAGE_CAL_PANELayout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Label_CAL_Speices)
-                            .addComponent(Label_CAL_Weight)
-                            .addComponent(Label_CAL_Medication))
-                        .addGap(56, 56, 56)
-                        .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TextField_CAL_Medication, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TextField_CAL_Weight, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ComboBox_CAL_Species, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(DOSAGE_CAL_PANELayout.createSequentialGroup()
+                                .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Label_CAL_Speices)
+                                    .addComponent(Label_CAL_Weight)
+                                    .addComponent(Label_CAL_Medication))
+                                .addGap(56, 56, 56)
+                                .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(ComboBox_CAL_Species, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(TextField_CAL_Weight, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                                    .addComponent(TextField_CAL_Medication)))
+                            .addGroup(DOSAGE_CAL_PANELayout.createSequentialGroup()
+                                .addComponent(RadioButton_CAL_HighDose)
+                                .addGap(59, 59, 59)
+                                .addComponent(RadioButton_CAL_LowDose))))
                     .addGroup(DOSAGE_CAL_PANELayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -446,7 +460,10 @@ public class UI extends javax.swing.JFrame {
                     .addComponent(Label_CAL_Medication)
                     .addComponent(TextField_CAL_Medication, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
-                .addComponent(Button_CAL_Calculate)
+                .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Button_CAL_Calculate)
+                    .addComponent(RadioButton_CAL_HighDose)
+                    .addComponent(RadioButton_CAL_LowDose))
                 .addGap(9, 9, 9)
                 .addComponent(Label_CAL_Dosage)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -592,6 +609,10 @@ public class UI extends javax.swing.JFrame {
             }
         });
 
+        jRadioButton3.setText("High Dose");
+
+        jRadioButton4.setText("Low Dose");
+
         javax.swing.GroupLayout MEDICATION_PANELayout = new javax.swing.GroupLayout(MEDICATION_PANE);
         MEDICATION_PANE.setLayout(MEDICATION_PANELayout);
         MEDICATION_PANELayout.setHorizontalGroup(
@@ -606,28 +627,28 @@ public class UI extends javax.swing.JFrame {
                         .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(MEDICATION_PANELayout.createSequentialGroup()
-                                .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(MEDICATION_PANELayout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(Label_MED_MedName))
-                                    .addGroup(MEDICATION_PANELayout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(TextField_MED_MedName, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addComponent(Label_MED_MedName)
                                 .addGap(70, 70, 70)
                                 .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(ComboBox_MED_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Label_MED_Species))
-                                .addGap(0, 63, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MEDICATION_PANELayout.createSequentialGroup()
                                 .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(MEDICATION_PANELayout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(Label_MED_SelectDelete))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, MEDICATION_PANELayout.createSequentialGroup()
+                                    .addGroup(MEDICATION_PANELayout.createSequentialGroup()
                                         .addGap(18, 18, 18)
-                                        .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(Label_MED_FormulaGuide)
-                                            .addComponent(jScrollPane15))))
+                                        .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(TextField_MED_MedName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, MEDICATION_PANELayout.createSequentialGroup()
+                                                .addComponent(jRadioButton3)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jRadioButton4))
+                                            .addComponent(Label_MED_FormulaGuide, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jScrollPane15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))))
                                 .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(MEDICATION_PANELayout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -665,6 +686,10 @@ public class UI extends javax.swing.JFrame {
                         .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(TextField_MED_MedName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ComboBox_MED_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRadioButton3)
+                            .addComponent(jRadioButton4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Label_MED_FormulaGuide)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -886,6 +911,8 @@ public static void main(String args[]) {
     private javax.swing.JList<String> List_SPECIES_SpeciesList;
     private javax.swing.JPanel MEDICATION_PANE;
     private javax.swing.JPasswordField PasswordField_LOGIN_Name;
+    private javax.swing.JRadioButton RadioButton_CAL_HighDose;
+    private javax.swing.JRadioButton RadioButton_CAL_LowDose;
     private javax.swing.JPanel SPECIES_PANE;
     private javax.swing.JTextArea TextArea_MED_FormulaGuide;
     private javax.swing.JTextField TextField_CAL_Dosage;
@@ -911,6 +938,8 @@ public static void main(String args[]) {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;

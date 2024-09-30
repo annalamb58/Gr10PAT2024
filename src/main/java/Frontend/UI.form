@@ -579,15 +579,24 @@
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Label_CAL_Speices" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Label_CAL_Weight" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Label_CAL_Medication" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="TextField_CAL_Medication" min="-2" pref="117" max="-2" attributes="0"/>
-                                  <Component id="TextField_CAL_Weight" alignment="0" min="-2" pref="108" max="-2" attributes="0"/>
-                                  <Component id="ComboBox_CAL_Species" alignment="0" min="-2" pref="78" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="Label_CAL_Speices" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Label_CAL_Weight" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Label_CAL_Medication" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="ComboBox_CAL_Species" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="TextField_CAL_Weight" alignment="0" pref="108" max="32767" attributes="0"/>
+                                          <Component id="TextField_CAL_Medication" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="RadioButton_CAL_HighDose" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                                      <Component id="RadioButton_CAL_LowDose" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -621,7 +630,11 @@
                           <Component id="TextField_CAL_Medication" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                      <Component id="Button_CAL_Calculate" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="Button_CAL_Calculate" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="RadioButton_CAL_HighDose" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="RadioButton_CAL_LowDose" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                       <Component id="Label_CAL_Dosage" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -683,6 +696,16 @@
             <Component class="javax.swing.JTextField" name="TextField_CAL_Weight">
             </Component>
             <Component class="javax.swing.JTextField" name="TextField_CAL_Medication">
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="RadioButton_CAL_HighDose">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="High Dose "/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="RadioButton_CAL_LowDose">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Low Dose"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -863,22 +886,14 @@
                               <Component id="jScrollPane10" min="-2" pref="73" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="Label_MED_MedName" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                              <Component id="TextField_MED_MedName" min="-2" pref="142" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="Label_MED_MedName" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="ComboBox_MED_Species" min="-2" max="-2" attributes="0"/>
                                           <Component id="Label_MED_Species" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="0" pref="63" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
@@ -886,11 +901,17 @@
                                               <EmptySpace max="32767" attributes="0"/>
                                               <Component id="Label_MED_SelectDelete" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="Label_MED_FormulaGuide" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jScrollPane15" max="32767" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="TextField_MED_MedName" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="Label_MED_FormulaGuide" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jScrollPane15" alignment="0" pref="180" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -946,6 +967,11 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="TextField_MED_MedName" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="ComboBox_MED_Species" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="Label_MED_FormulaGuide" min="-2" max="-2" attributes="0"/>
@@ -1083,6 +1109,16 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Button_MED_DeleteActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="jRadioButton3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="High Dose"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="jRadioButton4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Low Dose"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

@@ -25,20 +25,24 @@ public class MedsManager {
      //default list
     public static String[] getMedsList() throws FileNotFoundException {
         File medsFile = new File("PATdata//meds.txt");
-        Scanner medsSc = new Scanner(medsFile);
+        Scanner fileSc = new Scanner(medsFile);
 
         // count
         int count = 0;
-        while (medsSc.hasNext()) {
+        while (fileSc.hasNextLine()) {
             count++;
-            medsSc.next();
+            fileSc.nextLine();
             System.out.println("");
         }
 
         // list
-        medsSc = new Scanner(medsFile);
+        fileSc = new Scanner(medsFile);
         String[] meds = new String[count];
+        
         for (int i = 0; i < count; i++) {
+            String line = fileSc.nextLine();
+            
+            Scanner medsSc = new Scanner(line); 
             meds[i] = medsSc.next();
         }
         return meds;
@@ -66,12 +70,16 @@ public class MedsManager {
     public static void addNewMed(String meds, String species, String formula) throws FileNotFoundException, IOException {
         File medsFile = new File("PATdata//meds.txt");
         Scanner medsSc = new Scanner(medsFile);
-
-        String line = medsSc.nextLine() + " " + meds + " " + species + " " + formula ;
+        
+        String output = "";
+        while(medsSc.hasNextLine()){
+            output += medsSc.nextLine() + "\n";
+        }
+        output += meds + " " + species + " " + formula;
 
         FileWriter medsFileWriter = new FileWriter("PATdata//meds.txt");
         PrintWriter pw = new PrintWriter(medsFileWriter);
-        pw.write(line);
+        pw.write(output);
         pw.close();
         
         

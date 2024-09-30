@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @author Anna
  */
 public class UserManager {
-    public static String filename = "data\\users.txt";
+    public static String filename = "PATdata\\users.txt";
     
     public static boolean checkLogin(String usernameToCheck, String passwordToCheck) throws FileNotFoundException{
         File f = new File(filename);

@@ -24,7 +24,7 @@ public class MedsManager {
   
      //default list
     public static String[] getMedsList() throws FileNotFoundException {
-        File medsFile = new File("data//meds.txt");
+        File medsFile = new File("PATdata//meds.txt");
         Scanner medsSc = new Scanner(medsFile);
 
         // count
@@ -46,7 +46,7 @@ public class MedsManager {
     }
 
     public static void deleteMeds(String meds) throws FileNotFoundException, IOException {
-        File medsFile = new File("data//meds.txt");
+        File medsFile = new File("PATdata//meds.txt");
         Scanner medsSc = new Scanner(medsFile);
 
         String line = "";
@@ -57,19 +57,19 @@ public class MedsManager {
             }
         }
 
-        FileWriter speciesFileWriter = new FileWriter("data//meds.txt");
+        FileWriter speciesFileWriter = new FileWriter("PATdata//meds.txt");
         PrintWriter pw = new PrintWriter(speciesFileWriter);
         pw.write(line);
         pw.close();
     }
 
     public static void addNewMed(String meds, String species, String formula) throws FileNotFoundException, IOException {
-        File medsFile = new File("data//meds.txt");
+        File medsFile = new File("PATdata//meds.txt");
         Scanner medsSc = new Scanner(medsFile);
 
         String line = medsSc.nextLine() + " " + meds + " " + species + " " + formula ;
 
-        FileWriter medsFileWriter = new FileWriter("data//meds.txt");
+        FileWriter medsFileWriter = new FileWriter("PATdata//meds.txt");
         PrintWriter pw = new PrintWriter(medsFileWriter);
         pw.write(line);
         pw.close();

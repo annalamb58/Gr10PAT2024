@@ -18,7 +18,7 @@ import java.util.Scanner;
 public class SpeciesManager {
 
     public static String[] getSpeciesList() throws FileNotFoundException {
-        File speciesFile = new File("data//species.txt");
+        File speciesFile = new File("PATdata//species.txt");
         Scanner speciesSc = new Scanner(speciesFile);
 
         // count
@@ -40,7 +40,7 @@ public class SpeciesManager {
     }
 
     public static void deleteSpecies(String species) throws FileNotFoundException, IOException {
-        File speciesFile = new File("data//species.txt");
+        File speciesFile = new File("PATdata//species.txt");
         Scanner speciesSc = new Scanner(speciesFile);
 
         String line = "";
@@ -51,7 +51,7 @@ public class SpeciesManager {
             }
         }
 
-        FileWriter speciesFileWriter = new FileWriter("data//species.txt");
+        FileWriter speciesFileWriter = new FileWriter("PATdata//species.txt");
         PrintWriter pw = new PrintWriter(speciesFileWriter);
         pw.write(line);
         pw.close();
@@ -59,12 +59,12 @@ public class SpeciesManager {
     }
     
     public static void addSpecies (String species) throws FileNotFoundException, IOException {
-        File speciesFile = new File("data//species.txt");
+        File speciesFile = new File("PATdata//species.txt");
         Scanner speciesSc = new Scanner(speciesFile);
         
         String line = speciesSc.nextLine() + " " + species ;
         
-        FileWriter speciesFileWriter = new FileWriter("data//species.txt");
+        FileWriter speciesFileWriter = new FileWriter("PATdata//species.txt");
         PrintWriter pw = new PrintWriter(speciesFileWriter);
         pw.write(line);
         pw.close();

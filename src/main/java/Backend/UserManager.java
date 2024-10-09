@@ -6,12 +6,19 @@ package Backend;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
  *
  * @author Anna
  */
+// Need to do:
+// Makes sure code works
+// Get files off other computer 
+
 public class UserManager {
     public static String filename = "PATdata\\users.txt";
     
@@ -24,10 +31,28 @@ public class UserManager {
             String password = sc.next();
             
             if(username.equals(usernameToCheck) && password.equals(passwordToCheck)){
-                return true;
+                return true; // if both the username and password is correct then login (send to frontend)
             }
         }
         
         return false;
+        
     }
+    
+    public static void SignUp (String user, String password) throws FileNotFoundException, IOException{
+        File userFile = new File(filename);
+        Scanner userSc = new Scanner(userFile);
+        
+        String output = "";
+        while(userSc.hasNextLine()){
+            output += userSc.nextLine() + "\n";
+        }
+        output += user + " " + password;
+
+        FileWriter medsFileWriter = new FileWriter(filename);
+        PrintWriter pw = new PrintWriter(medsFileWriter);
+        pw.write(output);
+        pw.close();
+    }
+    
 }

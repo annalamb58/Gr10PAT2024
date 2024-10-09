@@ -30,7 +30,6 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         TextField_LOGIN_Username = new javax.swing.JTextField();
         PasswordField_LOGIN_Password = new javax.swing.JPasswordField();
         Label_LOGIN_Username = new javax.swing.JLabel();
@@ -38,8 +37,8 @@ public class Login extends javax.swing.JFrame {
         Button_LOGIN_Login = new javax.swing.JButton();
         Button_LOGIN_SignUp = new javax.swing.JButton();
         Label_LOGIN_SignUp = new javax.swing.JLabel();
-
-        jLabel1.setText("jLabel1");
+        label_LOGIN_Login = new javax.swing.JLabel();
+        label_LOGIN_logo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(217, 217, 217));
@@ -56,15 +55,29 @@ public class Login extends javax.swing.JFrame {
         });
 
         Button_LOGIN_SignUp.setText("SignUp");
+        Button_LOGIN_SignUp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_LOGIN_SignUpActionPerformed(evt);
+            }
+        });
 
         Label_LOGIN_SignUp.setText("I don't have an account");
+
+        label_LOGIN_Login.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        label_LOGIN_Login.setText("LOGIN");
+
+        label_LOGIN_logo.setBackground(new java.awt.Color(217, 217, 217));
+        label_LOGIN_logo.setIcon(new javax.swing.ImageIcon("C:\\Users\\anna\\Downloads\\resizedLogo.png")); // NOI18N
+        label_LOGIN_logo.setIconTextGap(0);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(243, Short.MAX_VALUE)
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addComponent(label_LOGIN_logo)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -82,26 +95,36 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(Label_LOGIN_SignUp)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Button_LOGIN_SignUp)
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(label_LOGIN_Login)
+                        .addGap(36, 36, 36))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(102, 102, 102)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_LOGIN_Username)
-                    .addComponent(TextField_LOGIN_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PasswordField_LOGIN_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Label_LOGIN_Password))
-                .addGap(18, 18, 18)
-                .addComponent(Button_LOGIN_Login)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Button_LOGIN_SignUp)
-                    .addComponent(Label_LOGIN_SignUp))
-                .addGap(28, 28, 28))
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(label_LOGIN_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(label_LOGIN_Login)
+                        .addGap(46, 46, 46)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Label_LOGIN_Username)
+                            .addComponent(TextField_LOGIN_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(PasswordField_LOGIN_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Label_LOGIN_Password))
+                        .addGap(18, 18, 18)
+                        .addComponent(Button_LOGIN_Login)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Button_LOGIN_SignUp)
+                            .addComponent(Label_LOGIN_SignUp))
+                        .addGap(28, 28, 28))))
         );
 
         pack();
@@ -126,6 +149,19 @@ public class Login extends javax.swing.JFrame {
             Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Button_LOGIN_LoginActionPerformed
+
+    private void Button_LOGIN_SignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_LOGIN_SignUpActionPerformed
+        try {
+            
+       SignUp SignUpFrame = new SignUp();
+       SignUpFrame.setVisible(true);
+       SignUpFrame.pack();
+       SignUpFrame.setLocationRelativeTo(null);
+       this.dispose();
+       
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_Button_LOGIN_SignUpActionPerformed
 
     /**
          * @param args the command line arguments
@@ -171,6 +207,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel Label_LOGIN_Username;
     private javax.swing.JPasswordField PasswordField_LOGIN_Password;
     private javax.swing.JTextField TextField_LOGIN_Username;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel label_LOGIN_Login;
+    private javax.swing.JLabel label_LOGIN_logo;
     // End of variables declaration//GEN-END:variables
 }

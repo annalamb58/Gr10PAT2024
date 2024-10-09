@@ -57,7 +57,7 @@ public class MedsManager {
         while (medsSc.hasNext()) {
             String currentMeds = medsSc.next();
             if (!currentMeds.equals(meds)) {
-                line = line + currentMeds + " ";
+                line = line + currentMeds + "\n ";
             }
         }
 

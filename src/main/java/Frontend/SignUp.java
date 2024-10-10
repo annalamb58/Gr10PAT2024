@@ -39,6 +39,7 @@ public class SignUp extends javax.swing.JFrame {
         Label_SIGNUP_Login = new javax.swing.JLabel();
         label_SIGUP_SignUp = new javax.swing.JLabel();
         label_SIGUP_logo = new javax.swing.JLabel();
+        label_SIGNUP_logo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(217, 217, 217));
@@ -67,8 +68,9 @@ public class SignUp extends javax.swing.JFrame {
         label_SIGUP_SignUp.setText("SIGN UP");
 
         label_SIGUP_logo.setBackground(new java.awt.Color(217, 217, 217));
-        label_SIGUP_logo.setIcon(new javax.swing.ImageIcon("C:\\Users\\anna\\Downloads\\resizedLogo.png")); // NOI18N
         label_SIGUP_logo.setIconTextGap(0);
+
+        label_SIGNUP_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resizedLOGO.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -77,29 +79,30 @@ public class SignUp extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(label_SIGUP_logo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(label_SIGNUP_logo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(Label_SIGNUP_Password)
-                                .addComponent(Label_SIGNUP_Username))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(PasswordField_SIGNUP_Password, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                                .addComponent(TextField_SIGNUP_Username))
-                            .addGap(64, 64, 64))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Button_SIGNUP_SignUp)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(Label_SIGNUP_Login)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(Button_SIGNUP_Login)))
-                            .addContainerGap()))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(label_SIGUP_SignUp)
-                        .addGap(49, 49, 49))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Label_SIGNUP_Password)
+                            .addComponent(Label_SIGNUP_Username))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(TextField_SIGNUP_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PasswordField_SIGNUP_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(64, 64, 64))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Button_SIGNUP_SignUp)
+                        .addGap(90, 90, 90))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Label_SIGNUP_Login)
+                                .addGap(18, 18, 18)
+                                .addComponent(Button_SIGNUP_Login))
+                            .addComponent(label_SIGUP_SignUp))
+                        .addGap(42, 42, 42))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,18 +113,21 @@ public class SignUp extends javax.swing.JFrame {
                         .addComponent(label_SIGUP_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(label_SIGUP_SignUp)
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Label_SIGNUP_Username)
-                            .addComponent(TextField_SIGNUP_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(23, 23, 23)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(PasswordField_SIGNUP_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Label_SIGNUP_Password))
-                        .addGap(18, 18, 18)
-                        .addComponent(Button_SIGNUP_SignUp)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(label_SIGUP_SignUp)
+                                .addGap(34, 34, 34)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Label_SIGNUP_Username)
+                                    .addComponent(TextField_SIGNUP_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(23, 23, 23)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(PasswordField_SIGNUP_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Label_SIGNUP_Password))
+                                .addGap(18, 18, 18)
+                                .addComponent(Button_SIGNUP_SignUp))
+                            .addComponent(label_SIGNUP_logo))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Button_SIGNUP_Login)
                             .addComponent(Label_SIGNUP_Login))
@@ -205,6 +211,7 @@ public class SignUp extends javax.swing.JFrame {
     private javax.swing.JLabel Label_SIGNUP_Username;
     private javax.swing.JPasswordField PasswordField_SIGNUP_Password;
     private javax.swing.JTextField TextField_SIGNUP_Username;
+    private javax.swing.JLabel label_SIGNUP_logo;
     private javax.swing.JLabel label_SIGUP_SignUp;
     private javax.swing.JLabel label_SIGUP_logo;
     // End of variables declaration//GEN-END:variables

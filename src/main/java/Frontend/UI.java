@@ -38,10 +38,7 @@ public class UI extends javax.swing.JFrame {
         //Initialise xxxx Screen
         updateSpeciesList();
         updateMedsList();
-        buttonGroup_MED_Doses.add(RadioButton_MED_HighDose);
-        buttonGroup_MED_Doses.add(RadioButton_MED_LowDose);
-        buttonGroup_CAL_Doses.add(RadioButton_CAL_HighDose);
-        buttonGroup_CAL_Doses.add(RadioButton_CAL_LowDose);
+
     }
 
     public void updateSpeciesList() throws FileNotFoundException {
@@ -88,8 +85,6 @@ public class UI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup_MED_Doses = new javax.swing.ButtonGroup();
-        buttonGroup_CAL_Doses = new javax.swing.ButtonGroup();
         LOCATION_TAB = new javax.swing.JTabbedPane();
         DOSAGE_CAL_PANE = new javax.swing.JPanel();
         Label_CAL_Speices = new javax.swing.JLabel();
@@ -101,8 +96,8 @@ public class UI extends javax.swing.JFrame {
         Label_CAL_Dosage = new javax.swing.JLabel();
         TextField_CAL_Weight = new javax.swing.JTextField();
         TextField_CAL_Medication = new javax.swing.JTextField();
-        RadioButton_CAL_HighDose = new javax.swing.JRadioButton();
-        RadioButton_CAL_LowDose = new javax.swing.JRadioButton();
+        checkbox_CAL_HighDose_YES = new javax.swing.JCheckBox();
+        label_CAl_HighDose = new javax.swing.JLabel();
         SPECIES_PANE = new javax.swing.JPanel();
         jScrollPane12 = new javax.swing.JScrollPane();
         List_SPECIES_SpeciesList = new javax.swing.JList<>();
@@ -128,8 +123,8 @@ public class UI extends javax.swing.JFrame {
         ComboBox_MED_Species = new javax.swing.JComboBox<>();
         Label_MED_SelectDelete = new javax.swing.JLabel();
         Button_MED_Delete = new javax.swing.JButton();
-        RadioButton_MED_HighDose = new javax.swing.JRadioButton();
-        RadioButton_MED_LowDose = new javax.swing.JRadioButton();
+        label_MED_HighDose = new javax.swing.JLabel();
+        checkbox_MED_HighDose_YES = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -163,9 +158,14 @@ public class UI extends javax.swing.JFrame {
 
         Label_CAL_Dosage.setText("Dosage");
 
-        RadioButton_CAL_HighDose.setText("High Dose ");
+        checkbox_CAL_HighDose_YES.setText("Yes");
+        checkbox_CAL_HighDose_YES.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkbox_CAL_HighDose_YESActionPerformed(evt);
+            }
+        });
 
-        RadioButton_CAL_LowDose.setText("Low Dose");
+        label_CAl_HighDose.setText("High Dose?");
 
         javax.swing.GroupLayout DOSAGE_CAL_PANELayout = new javax.swing.GroupLayout(DOSAGE_CAL_PANE);
         DOSAGE_CAL_PANE.setLayout(DOSAGE_CAL_PANELayout);
@@ -180,20 +180,16 @@ public class UI extends javax.swing.JFrame {
                     .addGroup(DOSAGE_CAL_PANELayout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(DOSAGE_CAL_PANELayout.createSequentialGroup()
-                                .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Label_CAL_Speices)
-                                    .addComponent(Label_CAL_Weight)
-                                    .addComponent(Label_CAL_Medication))
-                                .addGap(56, 56, 56)
-                                .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(ComboBox_CAL_Species, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(TextField_CAL_Weight, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                                    .addComponent(TextField_CAL_Medication)))
-                            .addGroup(DOSAGE_CAL_PANELayout.createSequentialGroup()
-                                .addComponent(RadioButton_CAL_HighDose)
-                                .addGap(59, 59, 59)
-                                .addComponent(RadioButton_CAL_LowDose))))
+                            .addComponent(Label_CAL_Speices)
+                            .addComponent(Label_CAL_Weight)
+                            .addComponent(Label_CAL_Medication)
+                            .addComponent(label_CAl_HighDose))
+                        .addGap(56, 56, 56)
+                        .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(ComboBox_CAL_Species, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(TextField_CAL_Weight, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                            .addComponent(TextField_CAL_Medication)
+                            .addComponent(checkbox_CAL_HighDose_YES, javax.swing.GroupLayout.Alignment.LEADING)))
                     .addGroup(DOSAGE_CAL_PANELayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,16 +212,21 @@ public class UI extends javax.swing.JFrame {
                 .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Label_CAL_Medication)
                     .addComponent(TextField_CAL_Medication, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
-                .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Button_CAL_Calculate)
-                    .addComponent(RadioButton_CAL_HighDose)
-                    .addComponent(RadioButton_CAL_LowDose))
-                .addGap(9, 9, 9)
+                .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(DOSAGE_CAL_PANELayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(Button_CAL_Calculate)
+                        .addGap(9, 9, 9))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DOSAGE_CAL_PANELayout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(label_CAl_HighDose)
+                            .addComponent(checkbox_CAL_HighDose_YES))
+                        .addGap(18, 18, 18)))
                 .addComponent(Label_CAL_Dosage)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TextField_CAL_Dosage, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         LOCATION_TAB.addTab("Dosage Calculator", DOSAGE_CAL_PANE);
@@ -366,9 +367,9 @@ public class UI extends javax.swing.JFrame {
             }
         });
 
-        RadioButton_MED_HighDose.setText("High Dose");
+        label_MED_HighDose.setText("High Dose?");
 
-        RadioButton_MED_LowDose.setText("Low Dose");
+        checkbox_MED_HighDose_YES.setText("Yes");
 
         javax.swing.GroupLayout MEDICATION_PANELayout = new javax.swing.GroupLayout(MEDICATION_PANE);
         MEDICATION_PANE.setLayout(MEDICATION_PANELayout);
@@ -395,16 +396,17 @@ public class UI extends javax.swing.JFrame {
                                     .addGroup(MEDICATION_PANELayout.createSequentialGroup()
                                         .addGap(18, 18, 18)
                                         .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jScrollPane15, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jScrollPane15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
                                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, MEDICATION_PANELayout.createSequentialGroup()
                                                 .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                     .addComponent(TextField_MED_MedName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addComponent(Label_MED_FormulaGuide, javax.swing.GroupLayout.Alignment.LEADING))
                                                 .addGap(0, 0, Short.MAX_VALUE))
-                                            .addGroup(MEDICATION_PANELayout.createSequentialGroup()
-                                                .addComponent(RadioButton_MED_HighDose)
-                                                .addGap(36, 36, 36)
-                                                .addComponent(RadioButton_MED_LowDose)))))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, MEDICATION_PANELayout.createSequentialGroup()
+                                                .addComponent(label_MED_HighDose)
+                                                .addGap(30, 30, 30)
+                                                .addComponent(checkbox_MED_HighDose_YES)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                                 .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(MEDICATION_PANELayout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -441,11 +443,11 @@ public class UI extends javax.swing.JFrame {
                         .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(TextField_MED_MedName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ComboBox_MED_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(26, 26, 26)
                         .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(RadioButton_MED_HighDose)
-                            .addComponent(RadioButton_MED_LowDose))
-                        .addGap(28, 28, 28)
+                            .addComponent(label_MED_HighDose)
+                            .addComponent(checkbox_MED_HighDose_YES))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Label_MED_FormulaGuide)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -573,6 +575,10 @@ public class UI extends javax.swing.JFrame {
     
     }//GEN-LAST:event_TextField_MED_MedNameActionPerformed
 
+    private void checkbox_CAL_HighDose_YESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_CAL_HighDose_YESActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkbox_CAL_HighDose_YESActionPerformed
+
 /**
  * @param args the command line arguments
  */
@@ -653,10 +659,6 @@ public static void main(String args[]) {
     private javax.swing.JList<String> List_MED_MedsList;
     private javax.swing.JList<String> List_SPECIES_SpeciesList;
     private javax.swing.JPanel MEDICATION_PANE;
-    private javax.swing.JRadioButton RadioButton_CAL_HighDose;
-    private javax.swing.JRadioButton RadioButton_CAL_LowDose;
-    private javax.swing.JRadioButton RadioButton_MED_HighDose;
-    private javax.swing.JRadioButton RadioButton_MED_LowDose;
     private javax.swing.JPanel SPECIES_PANE;
     private javax.swing.JTextArea TextArea_MED_FormulaGuide;
     private javax.swing.JTextField TextField_CAL_Dosage;
@@ -665,10 +667,12 @@ public static void main(String args[]) {
     private javax.swing.JTextField TextField_MED_FormulaAdd;
     private javax.swing.JTextField TextField_MED_MedName;
     private javax.swing.JTextField TextField_SPECIES_Species;
-    private javax.swing.ButtonGroup buttonGroup_CAL_Doses;
-    private javax.swing.ButtonGroup buttonGroup_MED_Doses;
+    private javax.swing.JCheckBox checkbox_CAL_HighDose_YES;
+    private javax.swing.JCheckBox checkbox_MED_HighDose_YES;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane15;
+    private javax.swing.JLabel label_CAl_HighDose;
+    private javax.swing.JLabel label_MED_HighDose;
     // End of variables declaration//GEN-END:variables
 }

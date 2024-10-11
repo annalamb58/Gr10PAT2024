@@ -69,7 +69,7 @@ public class DosageCalculator {
                     String placement = formulaSc.nextLine().trim();
 
                     // Breaking line into tokens
-                    String[] tokens = placement.split("\\s+");
+                    //String[] tokens = placement.split("\\s+");
 
                     if (tokens.length >= 5) {
                         // Saving the tokens to variables
@@ -91,10 +91,12 @@ public class DosageCalculator {
             }
 
             scannerForCAL.close(); // Close the main scanner
-            return String.valueOf(calculation); // end of getFormula method
+            //return String.valueOf(calculation); // end of getFormula method
 
         } // end of class
-
+        return null;
+    }
+}
 // OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE #
 //        String currentMeds = "";
 //        String currentSpecies = "";

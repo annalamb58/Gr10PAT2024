@@ -55,9 +55,9 @@ public class MedsManager {
 
         String line = "";
         while (medsSc.hasNext()) {
-            String currentMeds = medsSc.next();
+            String currentMeds = medsSc.nextLine();
             if (!currentMeds.equals(meds)) {
-                line = line + currentMeds + "\n ";
+                line += currentMeds + "\n ";
             }
         }
 
@@ -67,7 +67,7 @@ public class MedsManager {
         pw.close();
     }
 
-    public static void addNewMed(String meds, String species, String formula) throws FileNotFoundException, IOException {
+    public static void addNewMed(String meds, String species, String formula, String dose) throws FileNotFoundException, IOException {
         File medsFile = new File("PATdata//meds.txt");
         Scanner medsSc = new Scanner(medsFile);
         
@@ -75,7 +75,7 @@ public class MedsManager {
         while(medsSc.hasNextLine()){
             output += medsSc.nextLine() + "\n";
         }
-        output += meds + " " + species + " " + formula;
+        output += meds + " " + species + " " + formula + " " + dose;
 
         FileWriter medsFileWriter = new FileWriter("PATdata//meds.txt");
         PrintWriter pw = new PrintWriter(medsFileWriter);

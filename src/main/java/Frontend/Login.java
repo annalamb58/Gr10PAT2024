@@ -135,15 +135,13 @@ public class Login extends javax.swing.JFrame {
             String user = TextField_LOGIN_Username.getText();
             String password = PasswordField_LOGIN_Password.getText();
             //Check withh backend
-            if(UserManager.checkLogin(user, password)){
+            if (UserManager.checkLogin(user, password)) {
                 //Move to next screen
                 new UI().setVisible(true);
                 //Closes Login screen
                 this.dispose();
             }
-             
-            
-            
+
         } catch (Exception ex) {
             Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -151,20 +149,20 @@ public class Login extends javax.swing.JFrame {
 
     private void Button_LOGIN_SignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_LOGIN_SignUpActionPerformed
         try {
-            
-       SignUp SignUpFrame = new SignUp();
-       SignUpFrame.setVisible(true);
-       SignUpFrame.pack();
-       SignUpFrame.setLocationRelativeTo(null);
-       this.dispose();
-       
+
+            SignUp SignUpFrame = new SignUp();
+            SignUpFrame.setVisible(true);
+            SignUpFrame.pack();
+            SignUpFrame.setLocationRelativeTo(null);
+            this.dispose();
+
         } catch (Exception e) {
         }
     }//GEN-LAST:event_Button_LOGIN_SignUpActionPerformed
 
     /**
-         * @param args the command line arguments
-         */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

@@ -4,6 +4,7 @@
  */
 package Frontend;
 
+import Backend.DosageCalculator;
 import Backend.MedsManager;
 import Backend.SpeciesManager;
 import java.awt.Color;
@@ -44,36 +45,38 @@ public class UI extends javax.swing.JFrame {
     public void updateSpeciesList() throws FileNotFoundException {
         //populating the species list
         String[] species = SpeciesManager.getSpeciesList();
-        
+
         //Populate lists
         DefaultListModel speciesListModel = new DefaultListModel();
         for (int i = 0; i < species.length; i++) {
             speciesListModel.addElement(species[i]);
 
         }
-        List_SPECIES_SpeciesList.setModel(speciesListModel);
-        
-        //Populate combo boxes
-        DefaultComboBoxModel comboBoxModel = new DefaultComboBoxModel(species);
-        ComboBox_MED_Species.setModel(comboBoxModel);
-        ComboBox_CAL_Species.setModel(comboBoxModel);
+        list_SPECIES_SpeciesList.setModel(speciesListModel);
+
+        //Populate combo boxes (species)
+        DefaultComboBoxModel comboBoxModelspecies = new DefaultComboBoxModel(species);
+        comboBox_MED_Species.setModel(comboBoxModelspecies);
+        comboBox_CAL_Species.setModel(comboBoxModelspecies);
     }
 
     public void updateMedsList() throws FileNotFoundException {
-        //populating the species list
+        //populating the meds list
         String[] meds = MedsManager.getMedsList();
         DefaultListModel medsListModel = new DefaultListModel();
         for (int i = 0; i < meds.length; i++) {
             medsListModel.addElement(meds[i]);
 
         }
-        List_MED_MedsList.setModel(medsListModel);
+        list_MED_MedsList.setModel(medsListModel);
+
+        //Populate combo boxes (meds)
+        DefaultComboBoxModel comboBoxModelMeds = new DefaultComboBoxModel(meds);
+        comboBox_CAL_Meds.setModel(comboBoxModelMeds);
     }
-    
+
     public void populateMedsSpeciesComboBox(String species) throws FileNotFoundException {
 
-        
-        
     }
 
     /**
@@ -87,42 +90,42 @@ public class UI extends javax.swing.JFrame {
 
         LOCATION_TAB = new javax.swing.JTabbedPane();
         DOSAGE_CAL_PANE = new javax.swing.JPanel();
-        Label_CAL_Speices = new javax.swing.JLabel();
-        Label_CAL_Weight = new javax.swing.JLabel();
-        Label_CAL_Medication = new javax.swing.JLabel();
-        ComboBox_CAL_Species = new javax.swing.JComboBox<>();
-        Button_CAL_Calculate = new javax.swing.JButton();
-        TextField_CAL_Dosage = new javax.swing.JTextField();
-        Label_CAL_Dosage = new javax.swing.JLabel();
-        TextField_CAL_Weight = new javax.swing.JTextField();
-        TextField_CAL_Medication = new javax.swing.JTextField();
+        label_CAL_Speices = new javax.swing.JLabel();
+        label_CAL_Weight = new javax.swing.JLabel();
+        label_CAL_Medication = new javax.swing.JLabel();
+        comboBox_CAL_Species = new javax.swing.JComboBox<>();
+        button_CAL_Calculate = new javax.swing.JButton();
+        textField_CAL_Dosage = new javax.swing.JTextField();
+        label_CAL_Dosage = new javax.swing.JLabel();
+        textField_CAL_Weight = new javax.swing.JTextField();
         checkbox_CAL_HighDose_YES = new javax.swing.JCheckBox();
         label_CAl_HighDose = new javax.swing.JLabel();
+        comboBox_CAL_Meds = new javax.swing.JComboBox<>();
         SPECIES_PANE = new javax.swing.JPanel();
         jScrollPane12 = new javax.swing.JScrollPane();
-        List_SPECIES_SpeciesList = new javax.swing.JList<>();
-        Label_SPECIES_SpeciesList = new javax.swing.JLabel();
-        Label_SPECIES_Name = new javax.swing.JLabel();
-        TextField_SPECIES_Species = new javax.swing.JTextField();
-        Button_SPECIES_Add = new javax.swing.JButton();
-        Label_SPECIES_SelectDelete = new javax.swing.JLabel();
-        Button_SPECIES_Delete = new javax.swing.JButton();
+        list_SPECIES_SpeciesList = new javax.swing.JList<>();
+        label_SPECIES_SpeciesList = new javax.swing.JLabel();
+        label_SPECIES_Name = new javax.swing.JLabel();
+        textField_SPECIES_Species = new javax.swing.JTextField();
+        button_SPECIES_Add = new javax.swing.JButton();
+        label_SPECIES_SelectDelete = new javax.swing.JLabel();
+        button_SPECIES_Delete = new javax.swing.JButton();
         MEDICATION_PANE = new javax.swing.JPanel();
         jScrollPane10 = new javax.swing.JScrollPane();
-        List_MED_MedsList = new javax.swing.JList<>();
-        TextField_MED_MedName = new javax.swing.JTextField();
-        TextField_MED_FormulaAdd = new javax.swing.JTextField();
-        Button_MED_FormulaAdd = new javax.swing.JButton();
-        Label_MED_FormulaAdd = new javax.swing.JLabel();
-        Label_MED_MedName = new javax.swing.JLabel();
-        Label_MED_FormulaGuide = new javax.swing.JLabel();
+        list_MED_MedsList = new javax.swing.JList<>();
+        textField_MED_MedName = new javax.swing.JTextField();
+        textField_MED_FormulaAdd = new javax.swing.JTextField();
+        button_MED_FormulaAdd = new javax.swing.JButton();
+        label_MED_FormulaAdd = new javax.swing.JLabel();
+        label_MED_MedName = new javax.swing.JLabel();
+        label_MED_FormulaGuide = new javax.swing.JLabel();
         jScrollPane15 = new javax.swing.JScrollPane();
-        TextArea_MED_FormulaGuide = new javax.swing.JTextArea();
-        Label_MED_MedsList = new javax.swing.JLabel();
-        Label_MED_Species = new javax.swing.JLabel();
-        ComboBox_MED_Species = new javax.swing.JComboBox<>();
-        Label_MED_SelectDelete = new javax.swing.JLabel();
-        Button_MED_Delete = new javax.swing.JButton();
+        textArea_MED_FormulaGuide = new javax.swing.JTextArea();
+        label_MED_MedsList = new javax.swing.JLabel();
+        label_MED_Species = new javax.swing.JLabel();
+        comboBox_MED_Species = new javax.swing.JComboBox<>();
+        label_MED_SelectDelete = new javax.swing.JLabel();
+        button_MED_Delete = new javax.swing.JButton();
         label_MED_HighDose = new javax.swing.JLabel();
         checkbox_MED_HighDose_YES = new javax.swing.JCheckBox();
 
@@ -139,24 +142,29 @@ public class UI extends javax.swing.JFrame {
         DOSAGE_CAL_PANE.setBackground(new java.awt.Color(217, 217, 217));
         DOSAGE_CAL_PANE.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 204, 255)));
 
-        Label_CAL_Speices.setText("Species");
+        label_CAL_Speices.setText("Species");
 
-        Label_CAL_Weight.setText("Weight");
+        label_CAL_Weight.setText("Weight");
 
-        Label_CAL_Medication.setText("Medication");
+        label_CAL_Medication.setText("Medication");
 
-        ComboBox_CAL_Species.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        ComboBox_CAL_Species.addActionListener(new java.awt.event.ActionListener() {
+        comboBox_CAL_Species.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBox_CAL_Species.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComboBox_CAL_SpeciesActionPerformed(evt);
+                comboBox_CAL_SpeciesActionPerformed(evt);
             }
         });
 
-        Button_CAL_Calculate.setText("CALCULATE");
+        button_CAL_Calculate.setText("CALCULATE");
+        button_CAL_Calculate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_CAL_CalculateActionPerformed(evt);
+            }
+        });
 
-        TextField_CAL_Dosage.setText("Final Calculation to show here");
+        textField_CAL_Dosage.setText("Final Calculation to show here");
 
-        Label_CAL_Dosage.setText("Dosage");
+        label_CAL_Dosage.setText("Dosage");
 
         checkbox_CAL_HighDose_YES.setText("Yes");
         checkbox_CAL_HighDose_YES.addActionListener(new java.awt.event.ActionListener() {
@@ -167,97 +175,98 @@ public class UI extends javax.swing.JFrame {
 
         label_CAl_HighDose.setText("High Dose?");
 
+        comboBox_CAL_Meds.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout DOSAGE_CAL_PANELayout = new javax.swing.GroupLayout(DOSAGE_CAL_PANE);
         DOSAGE_CAL_PANE.setLayout(DOSAGE_CAL_PANELayout);
         DOSAGE_CAL_PANELayout.setHorizontalGroup(
             DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DOSAGE_CAL_PANELayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Button_CAL_Calculate)
+                .addComponent(button_CAL_Calculate)
                 .addGap(41, 41, 41))
             .addGroup(DOSAGE_CAL_PANELayout.createSequentialGroup()
                 .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(DOSAGE_CAL_PANELayout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Label_CAL_Speices)
-                            .addComponent(Label_CAL_Weight)
-                            .addComponent(Label_CAL_Medication)
+                            .addComponent(label_CAL_Speices)
+                            .addComponent(label_CAL_Weight)
+                            .addComponent(label_CAL_Medication)
                             .addComponent(label_CAl_HighDose))
                         .addGap(56, 56, 56)
                         .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(ComboBox_CAL_Species, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(TextField_CAL_Weight, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                            .addComponent(TextField_CAL_Medication)
-                            .addComponent(checkbox_CAL_HighDose_YES, javax.swing.GroupLayout.Alignment.LEADING)))
+                            .addComponent(comboBox_CAL_Species, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(textField_CAL_Weight, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                            .addComponent(checkbox_CAL_HighDose_YES, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(comboBox_CAL_Meds, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(DOSAGE_CAL_PANELayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Label_CAL_Dosage, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TextField_CAL_Dosage, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(152, Short.MAX_VALUE))
+                            .addComponent(label_CAL_Dosage, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textField_CAL_Dosage, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
         DOSAGE_CAL_PANELayout.setVerticalGroup(
             DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DOSAGE_CAL_PANELayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_CAL_Speices)
-                    .addComponent(ComboBox_CAL_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label_CAL_Speices)
+                    .addComponent(comboBox_CAL_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_CAL_Weight)
-                    .addComponent(TextField_CAL_Weight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_CAL_Medication)
-                    .addComponent(TextField_CAL_Medication, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_CAL_Weight)
+                    .addComponent(textField_CAL_Weight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(DOSAGE_CAL_PANELayout.createSequentialGroup()
+                        .addComponent(label_CAL_Medication)
                         .addGap(19, 19, 19)
-                        .addComponent(Button_CAL_Calculate)
+                        .addComponent(button_CAL_Calculate)
                         .addGap(9, 9, 9))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DOSAGE_CAL_PANELayout.createSequentialGroup()
-                        .addGap(11, 11, 11)
+                    .addGroup(DOSAGE_CAL_PANELayout.createSequentialGroup()
+                        .addComponent(comboBox_CAL_Meds, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(label_CAl_HighDose)
                             .addComponent(checkbox_CAL_HighDose_YES))
                         .addGap(18, 18, 18)))
-                .addComponent(Label_CAL_Dosage)
+                .addComponent(label_CAL_Dosage)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TextField_CAL_Dosage, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addComponent(textField_CAL_Dosage, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         LOCATION_TAB.addTab("Dosage Calculator", DOSAGE_CAL_PANE);
 
         SPECIES_PANE.setBackground(new java.awt.Color(217, 217, 217));
 
-        List_SPECIES_SpeciesList.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
-        List_SPECIES_SpeciesList.setModel(new javax.swing.AbstractListModel<String>() {
+        list_SPECIES_SpeciesList.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        list_SPECIES_SpeciesList.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane12.setViewportView(List_SPECIES_SpeciesList);
+        jScrollPane12.setViewportView(list_SPECIES_SpeciesList);
 
-        Label_SPECIES_SpeciesList.setText("Species");
+        label_SPECIES_SpeciesList.setText("Species");
 
-        Label_SPECIES_Name.setText("Name");
+        label_SPECIES_Name.setText("Name");
 
-        Button_SPECIES_Add.setText("ADD");
-        Button_SPECIES_Add.addActionListener(new java.awt.event.ActionListener() {
+        button_SPECIES_Add.setText("ADD");
+        button_SPECIES_Add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button_SPECIES_AddActionPerformed(evt);
+                button_SPECIES_AddActionPerformed(evt);
             }
         });
 
-        Label_SPECIES_SelectDelete.setText("Select Species from list to Delete");
+        label_SPECIES_SelectDelete.setText("Select Species from list to Delete");
 
-        Button_SPECIES_Delete.setText("DELETE");
-        Button_SPECIES_Delete.addActionListener(new java.awt.event.ActionListener() {
+        button_SPECIES_Delete.setText("DELETE");
+        button_SPECIES_Delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button_SPECIES_DeleteActionPerformed(evt);
+                button_SPECIES_DeleteActionPerformed(evt);
             }
         });
 
@@ -269,7 +278,7 @@ public class UI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(SPECIES_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(SPECIES_PANELayout.createSequentialGroup()
-                        .addComponent(Label_SPECIES_SpeciesList)
+                        .addComponent(label_SPECIES_SpeciesList)
                         .addGap(26, 26, 26))
                     .addGroup(SPECIES_PANELayout.createSequentialGroup()
                         .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -278,18 +287,18 @@ public class UI extends javax.swing.JFrame {
                                 .addGroup(SPECIES_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(SPECIES_PANELayout.createSequentialGroup()
                                         .addGap(31, 31, 31)
-                                        .addComponent(Label_SPECIES_Name)
+                                        .addComponent(label_SPECIES_Name)
                                         .addGap(34, 34, 34)
-                                        .addComponent(TextField_SPECIES_Species, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(textField_SPECIES_Species, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(SPECIES_PANELayout.createSequentialGroup()
                                         .addGap(18, 18, 18)
-                                        .addComponent(Label_SPECIES_SelectDelete)
+                                        .addComponent(label_SPECIES_SelectDelete)
                                         .addGap(18, 18, 18)
-                                        .addComponent(Button_SPECIES_Delete)))
+                                        .addComponent(button_SPECIES_Delete)))
                                 .addGap(0, 81, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SPECIES_PANELayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Button_SPECIES_Add)
+                                .addComponent(button_SPECIES_Add)
                                 .addGap(143, 143, 143))))))
         );
         SPECIES_PANELayout.setVerticalGroup(
@@ -299,17 +308,17 @@ public class UI extends javax.swing.JFrame {
                     .addGroup(SPECIES_PANELayout.createSequentialGroup()
                         .addGap(53, 53, 53)
                         .addGroup(SPECIES_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(TextField_SPECIES_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Label_SPECIES_Name))
+                            .addComponent(textField_SPECIES_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label_SPECIES_Name))
                         .addGap(32, 32, 32)
-                        .addComponent(Button_SPECIES_Add)
+                        .addComponent(button_SPECIES_Add)
                         .addGap(52, 52, 52)
                         .addGroup(SPECIES_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Label_SPECIES_SelectDelete)
-                            .addComponent(Button_SPECIES_Delete)))
+                            .addComponent(label_SPECIES_SelectDelete)
+                            .addComponent(button_SPECIES_Delete)))
                     .addGroup(SPECIES_PANELayout.createSequentialGroup()
                         .addGap(13, 13, 13)
-                        .addComponent(Label_SPECIES_SpeciesList)
+                        .addComponent(label_SPECIES_SpeciesList)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(15, Short.MAX_VALUE))
@@ -319,51 +328,51 @@ public class UI extends javax.swing.JFrame {
 
         MEDICATION_PANE.setBackground(new java.awt.Color(217, 217, 217));
 
-        List_MED_MedsList.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        List_MED_MedsList.setModel(new javax.swing.AbstractListModel<String>() {
+        list_MED_MedsList.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        list_MED_MedsList.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane10.setViewportView(List_MED_MedsList);
+        jScrollPane10.setViewportView(list_MED_MedsList);
 
-        TextField_MED_MedName.addActionListener(new java.awt.event.ActionListener() {
+        textField_MED_MedName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextField_MED_MedNameActionPerformed(evt);
+                textField_MED_MedNameActionPerformed(evt);
             }
         });
 
-        Button_MED_FormulaAdd.setText("ADD");
-        Button_MED_FormulaAdd.addActionListener(new java.awt.event.ActionListener() {
+        button_MED_FormulaAdd.setText("ADD");
+        button_MED_FormulaAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button_MED_FormulaAddActionPerformed(evt);
+                button_MED_FormulaAddActionPerformed(evt);
             }
         });
 
-        Label_MED_FormulaAdd.setText("Formula");
+        label_MED_FormulaAdd.setText("Formula");
 
-        Label_MED_MedName.setText("Medication Name");
+        label_MED_MedName.setText("Medication Name");
 
-        Label_MED_FormulaGuide.setText("Formula Guide");
+        label_MED_FormulaGuide.setText("Formula Guide");
 
-        TextArea_MED_FormulaGuide.setEditable(false);
-        TextArea_MED_FormulaGuide.setColumns(20);
-        TextArea_MED_FormulaGuide.setRows(5);
-        jScrollPane15.setViewportView(TextArea_MED_FormulaGuide);
+        textArea_MED_FormulaGuide.setEditable(false);
+        textArea_MED_FormulaGuide.setColumns(20);
+        textArea_MED_FormulaGuide.setRows(5);
+        jScrollPane15.setViewportView(textArea_MED_FormulaGuide);
 
-        Label_MED_MedsList.setBackground(new java.awt.Color(251, 193, 110));
-        Label_MED_MedsList.setText("Medications");
+        label_MED_MedsList.setBackground(new java.awt.Color(251, 193, 110));
+        label_MED_MedsList.setText("Medications");
 
-        Label_MED_Species.setText("Species");
+        label_MED_Species.setText("Species");
 
-        ComboBox_MED_Species.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBox_MED_Species.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        Label_MED_SelectDelete.setText("Select Medication from list to Delete");
+        label_MED_SelectDelete.setText("Select Medication from list to Delete");
 
-        Button_MED_Delete.setText("DELETE");
-        Button_MED_Delete.addActionListener(new java.awt.event.ActionListener() {
+        button_MED_Delete.setText("DELETE");
+        button_MED_Delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button_MED_DeleteActionPerformed(evt);
+                button_MED_DeleteActionPerformed(evt);
             }
         });
 
@@ -379,84 +388,83 @@ public class UI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MEDICATION_PANELayout.createSequentialGroup()
-                        .addComponent(Label_MED_MedsList)
+                        .addComponent(label_MED_MedsList)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(MEDICATION_PANELayout.createSequentialGroup()
                         .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(MEDICATION_PANELayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(Label_MED_MedName)
+                                .addComponent(label_MED_MedName)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MEDICATION_PANELayout.createSequentialGroup()
                                 .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(MEDICATION_PANELayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(Label_MED_SelectDelete))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                                        .addComponent(label_MED_SelectDelete))
                                     .addGroup(MEDICATION_PANELayout.createSequentialGroup()
                                         .addGap(18, 18, 18)
                                         .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(jScrollPane15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
                                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, MEDICATION_PANELayout.createSequentialGroup()
                                                 .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(TextField_MED_MedName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(Label_MED_FormulaGuide, javax.swing.GroupLayout.Alignment.LEADING))
-                                                .addGap(0, 0, Short.MAX_VALUE))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, MEDICATION_PANELayout.createSequentialGroup()
-                                                .addComponent(label_MED_HighDose)
-                                                .addGap(30, 30, 30)
-                                                .addComponent(checkbox_MED_HighDose_YES)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                                    .addComponent(textField_MED_MedName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(label_MED_FormulaGuide, javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, MEDICATION_PANELayout.createSequentialGroup()
+                                                        .addComponent(label_MED_HighDose)
+                                                        .addGap(30, 30, 30)
+                                                        .addComponent(checkbox_MED_HighDose_YES)))
+                                                .addGap(0, 0, Short.MAX_VALUE)))))
                                 .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(MEDICATION_PANELayout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(Label_MED_FormulaAdd)
-                                            .addComponent(TextField_MED_FormulaAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(label_MED_FormulaAdd)
+                                            .addComponent(textField_MED_FormulaAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MEDICATION_PANELayout.createSequentialGroup()
-                                                .addComponent(Button_MED_FormulaAdd)
+                                                .addComponent(button_MED_FormulaAdd)
                                                 .addGap(40, 40, 40))
-                                            .addComponent(ComboBox_MED_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Label_MED_Species)))
+                                            .addComponent(comboBox_MED_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(label_MED_Species)))
                                     .addGroup(MEDICATION_PANELayout.createSequentialGroup()
                                         .addGap(32, 32, 32)
-                                        .addComponent(Button_MED_Delete)))))))
+                                        .addComponent(button_MED_Delete)))))))
                 .addContainerGap())
         );
         MEDICATION_PANELayout.setVerticalGroup(
             MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MEDICATION_PANELayout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(Label_MED_MedsList)
+                .addComponent(label_MED_MedsList)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(MEDICATION_PANELayout.createSequentialGroup()
                         .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Label_MED_SelectDelete)
-                            .addComponent(Button_MED_Delete))
+                            .addComponent(label_MED_SelectDelete)
+                            .addComponent(button_MED_Delete))
                         .addGap(31, 31, 31)
                         .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Label_MED_MedName)
-                            .addComponent(Label_MED_Species))
+                            .addComponent(label_MED_MedName)
+                            .addComponent(label_MED_Species))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(TextField_MED_MedName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ComboBox_MED_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textField_MED_MedName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(comboBox_MED_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(26, 26, 26)
                         .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(label_MED_HighDose)
                             .addComponent(checkbox_MED_HighDose_YES))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Label_MED_FormulaGuide)
+                        .addComponent(label_MED_FormulaGuide)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(MEDICATION_PANELayout.createSequentialGroup()
-                                .addComponent(Label_MED_FormulaAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label_MED_FormulaAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(13, 13, 13)
-                                .addComponent(TextField_MED_FormulaAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textField_MED_FormulaAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Button_MED_FormulaAdd))
+                                .addComponent(button_MED_FormulaAdd))
                             .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(10, 10, 10)))
                 .addContainerGap(16, Short.MAX_VALUE))
@@ -483,47 +491,53 @@ public class UI extends javax.swing.JFrame {
 
     private void LOCATION_TABMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LOCATION_TABMouseClicked
         //LOCATION_TAB.setBackground(Color.red);
-    
+
     }//GEN-LAST:event_LOCATION_TABMouseClicked
 
-    private void ComboBox_CAL_SpeciesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBox_CAL_SpeciesActionPerformed
+    private void comboBox_CAL_SpeciesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBox_CAL_SpeciesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ComboBox_CAL_SpeciesActionPerformed
+    }//GEN-LAST:event_comboBox_CAL_SpeciesActionPerformed
 
-    private void Button_MED_FormulaAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_MED_FormulaAddActionPerformed
+    private void button_MED_FormulaAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_MED_FormulaAddActionPerformed
         try {
             // get stuff from frontend
-            String NewMed = TextField_MED_MedName.getText();
-            String newSpecies = (String)ComboBox_MED_Species.getSelectedItem();
-            String NewFormula = TextField_MED_FormulaAdd.getText();
-            //String NewDose = buttonGroup_MED_Doses.toString() ;
-            // send to backend
-            MedsManager.addNewMed(NewMed, newSpecies, NewFormula); // , NewDose
+            String newDose = " ";
+            String newMed = textField_MED_MedName.getText();
+            String newSpecies = (String) comboBox_MED_Species.getSelectedItem();
+            String newFormula = textField_MED_FormulaAdd.getText();
+            if (checkbox_MED_HighDose_YES.isSelected()) {
+                newDose = "high";
+            } else {
+                newDose = "low";
+            }
+
+            MedsManager.addNewMed(newMed, newSpecies, newFormula, newDose);
             // update frontend
             updateMedsList();
-            TextField_MED_MedName.setText("");
+            textField_MED_MedName.setText("");
 
         } catch (IOException ex) {
             Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
         }
 
 
-    }//GEN-LAST:event_Button_MED_FormulaAddActionPerformed
+    }//GEN-LAST:event_button_MED_FormulaAddActionPerformed
 
-    private void Button_MED_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_MED_DeleteActionPerformed
+    private void button_MED_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_MED_DeleteActionPerformed
         try {
-            String selectedMeds = List_MED_MedsList.getSelectedValue();
+            //get
+            String selectedMeds = list_MED_MedsList.getSelectedValue();
             MedsManager.deleteMeds(selectedMeds);
             updateMedsList();
         } catch (Exception ex) {
             Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_Button_MED_DeleteActionPerformed
+    }//GEN-LAST:event_button_MED_DeleteActionPerformed
 
-    private void Button_SPECIES_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_SPECIES_DeleteActionPerformed
+    private void button_SPECIES_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_SPECIES_DeleteActionPerformed
         try {
             // get stuff from frontend
-            String seletedSpecies = List_SPECIES_SpeciesList.getSelectedValue();
+            String seletedSpecies = list_SPECIES_SpeciesList.getSelectedValue();
             // send to backend
             SpeciesManager.deleteSpecies(seletedSpecies);
             // updata frontend
@@ -535,33 +549,33 @@ public class UI extends javax.swing.JFrame {
         {
 
         }
-    }//GEN-LAST:event_Button_SPECIES_DeleteActionPerformed
+    }//GEN-LAST:event_button_SPECIES_DeleteActionPerformed
 
-    private void Button_SPECIES_AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_SPECIES_AddActionPerformed
+    private void button_SPECIES_AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_SPECIES_AddActionPerformed
 
         try {
             // get stuff from frontend
-            String NewSpecies = TextField_SPECIES_Species.getText();
+            String NewSpecies = textField_SPECIES_Species.getText();
             // send to backend
             SpeciesManager.addSpecies(NewSpecies);
             // updata frontend
             updateSpeciesList();
-            TextField_SPECIES_Species.setText("");
+            textField_SPECIES_Species.setText("");
 
         } catch (IOException ex) {
             Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-    }//GEN-LAST:event_Button_SPECIES_AddActionPerformed
+    }//GEN-LAST:event_button_SPECIES_AddActionPerformed
 
-    private void TextField_MED_MedNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextField_MED_MedNameActionPerformed
+    private void textField_MED_MedNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField_MED_MedNameActionPerformed
 // This is when you click enter it show add it without clicking thebutton 
 // This code is not needed but in case it is needed in the future it has been commented and not deleted
 //        try {
 //            // get stuff from frontend
-//            String NewMeds = TextField_MED_MedName.getText();
-//           String NewMed = TextField_MED_MedName.getText();
-//            String newSpecies = (String)ComboBox_MED_Species.getSelectedItem();
+//            String NewMeds = textField_MED_MedName.getText();
+//           String NewMed = textField_MED_MedName.getText();
+//            String newSpecies = (String)comboBox_MED_Species.getSelectedItem();
 //            String NewFormula = TextField_MED_FormulaAdd.getText();
 //            // send to backend
 //            MedsManager.addNewMed(NewMeds, newSpecies, NewFormula);
@@ -572,17 +586,42 @@ public class UI extends javax.swing.JFrame {
 //            Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
 //        }
 
-    
-    }//GEN-LAST:event_TextField_MED_MedNameActionPerformed
+
+    }//GEN-LAST:event_textField_MED_MedNameActionPerformed
 
     private void checkbox_CAL_HighDose_YESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbox_CAL_HighDose_YESActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_checkbox_CAL_HighDose_YESActionPerformed
 
-/**
- * @param args the command line arguments
- */
-public static void main(String args[]) {
+    private void button_CAL_CalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_CAL_CalculateActionPerformed
+        // Calculating the dosage:
+        try {
+            // getting information entered by user
+            String selectedMed = (String) comboBox_CAL_Meds.getSelectedItem();
+            String selectedSpecies = (String) comboBox_CAL_Species.getSelectedItem();
+            String weightEnterd = textField_CAL_Weight.getText();
+            if (checkbox_MED_HighDose_YES.isSelected()) {
+                String doseWanted = "high";
+            } else {
+                String doseWanted = "low";
+            }
+            // send to backend
+            DosageCalculator.CalculatingDose(selectedMed, selectedMed, selectedMed, selectedMed);
+            
+            // update fronted
+            
+            
+        } catch (IOException ex) {
+            Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+    }//GEN-LAST:event_button_CAL_CalculateActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -596,25 +635,17 @@ public static void main(String args[]) {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UI
-
-.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UI.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UI
-
-.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UI.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UI
-
-.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UI.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UI
-
-.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UI.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -624,55 +655,53 @@ public static void main(String args[]) {
                 try {
                     new UI().setVisible(true);
                 } catch (FileNotFoundException ex) {
-                    Logger.getLogger(UI
-
-.class
-.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(UI.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Button_CAL_Calculate;
-    private javax.swing.JButton Button_MED_Delete;
-    private javax.swing.JButton Button_MED_FormulaAdd;
-    private javax.swing.JButton Button_SPECIES_Add;
-    private javax.swing.JButton Button_SPECIES_Delete;
-    private javax.swing.JComboBox<String> ComboBox_CAL_Species;
-    private javax.swing.JComboBox<String> ComboBox_MED_Species;
     private javax.swing.JPanel DOSAGE_CAL_PANE;
     private javax.swing.JTabbedPane LOCATION_TAB;
-    private javax.swing.JLabel Label_CAL_Dosage;
-    private javax.swing.JLabel Label_CAL_Medication;
-    private javax.swing.JLabel Label_CAL_Speices;
-    private javax.swing.JLabel Label_CAL_Weight;
-    private javax.swing.JLabel Label_MED_FormulaAdd;
-    private javax.swing.JLabel Label_MED_FormulaGuide;
-    private javax.swing.JLabel Label_MED_MedName;
-    private javax.swing.JLabel Label_MED_MedsList;
-    private javax.swing.JLabel Label_MED_SelectDelete;
-    private javax.swing.JLabel Label_MED_Species;
-    private javax.swing.JLabel Label_SPECIES_Name;
-    private javax.swing.JLabel Label_SPECIES_SelectDelete;
-    private javax.swing.JLabel Label_SPECIES_SpeciesList;
-    private javax.swing.JList<String> List_MED_MedsList;
-    private javax.swing.JList<String> List_SPECIES_SpeciesList;
     private javax.swing.JPanel MEDICATION_PANE;
     private javax.swing.JPanel SPECIES_PANE;
-    private javax.swing.JTextArea TextArea_MED_FormulaGuide;
-    private javax.swing.JTextField TextField_CAL_Dosage;
-    private javax.swing.JTextField TextField_CAL_Medication;
-    private javax.swing.JTextField TextField_CAL_Weight;
-    private javax.swing.JTextField TextField_MED_FormulaAdd;
-    private javax.swing.JTextField TextField_MED_MedName;
-    private javax.swing.JTextField TextField_SPECIES_Species;
+    private javax.swing.JButton button_CAL_Calculate;
+    private javax.swing.JButton button_MED_Delete;
+    private javax.swing.JButton button_MED_FormulaAdd;
+    private javax.swing.JButton button_SPECIES_Add;
+    private javax.swing.JButton button_SPECIES_Delete;
     private javax.swing.JCheckBox checkbox_CAL_HighDose_YES;
     private javax.swing.JCheckBox checkbox_MED_HighDose_YES;
+    private javax.swing.JComboBox<String> comboBox_CAL_Meds;
+    private javax.swing.JComboBox<String> comboBox_CAL_Species;
+    private javax.swing.JComboBox<String> comboBox_MED_Species;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane15;
+    private javax.swing.JLabel label_CAL_Dosage;
+    private javax.swing.JLabel label_CAL_Medication;
+    private javax.swing.JLabel label_CAL_Speices;
+    private javax.swing.JLabel label_CAL_Weight;
     private javax.swing.JLabel label_CAl_HighDose;
+    private javax.swing.JLabel label_MED_FormulaAdd;
+    private javax.swing.JLabel label_MED_FormulaGuide;
     private javax.swing.JLabel label_MED_HighDose;
+    private javax.swing.JLabel label_MED_MedName;
+    private javax.swing.JLabel label_MED_MedsList;
+    private javax.swing.JLabel label_MED_SelectDelete;
+    private javax.swing.JLabel label_MED_Species;
+    private javax.swing.JLabel label_SPECIES_Name;
+    private javax.swing.JLabel label_SPECIES_SelectDelete;
+    private javax.swing.JLabel label_SPECIES_SpeciesList;
+    private javax.swing.JList<String> list_MED_MedsList;
+    private javax.swing.JList<String> list_SPECIES_SpeciesList;
+    private javax.swing.JTextArea textArea_MED_FormulaGuide;
+    private javax.swing.JTextField textField_CAL_Dosage;
+    private javax.swing.JTextField textField_CAL_Weight;
+    private javax.swing.JTextField textField_MED_FormulaAdd;
+    private javax.swing.JTextField textField_MED_MedName;
+    private javax.swing.JTextField textField_SPECIES_Species;
     // End of variables declaration//GEN-END:variables
 }

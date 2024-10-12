@@ -18,33 +18,33 @@ import java.util.Scanner;
 // Need to do:
 // Makes sure code works
 // Get files off other computer 
-
 public class UserManager {
+
     public static String filename = "PATdata\\users.txt";
-    
-    public static boolean checkLogin(String usernameToCheck, String passwordToCheck) throws FileNotFoundException{
+
+    public static boolean checkLogin(String usernameToCheck, String passwordToCheck) throws FileNotFoundException {
         File f = new File(filename);
         Scanner sc = new Scanner(f);
-        
-        while(sc.hasNext()){
+
+        while (sc.hasNext()) {
             String username = sc.next();
             String password = sc.next();
-            
-            if(username.equals(usernameToCheck) && password.equals(passwordToCheck)){
+
+            if (username.equals(usernameToCheck) && password.equals(passwordToCheck)) {
                 return true; // if both the username and password is correct then login (send to frontend)
             }
         }
-        
+
         return false;
-        
+
     }
-    
-    public static void SignUp (String user, String password) throws FileNotFoundException, IOException{
+
+    public static void SignUp(String user, String password) throws FileNotFoundException, IOException {
         File userFile = new File(filename);
         Scanner userSc = new Scanner(userFile);
-        
+
         String output = "";
-        while(userSc.hasNextLine()){
+        while (userSc.hasNextLine()) {
             output += userSc.nextLine() + "\n";
         }
         output += user + " " + password;
@@ -54,5 +54,5 @@ public class UserManager {
         pw.write(output);
         pw.close();
     }
-    
+
 }

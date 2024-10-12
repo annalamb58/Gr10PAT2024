@@ -16,7 +16,7 @@ import java.util.Scanner;
  */
 public class DosageCalculator {
 
-    public static void CalculatingDose(String meds, String species, String formula, String dose) throws FileNotFoundException, IOException {
+    public static String CalculatingDose(String meds, String species, String weight, String dose) throws FileNotFoundException, IOException {
         // NOTE ORDER IN DOC = meds + " " + species + " " + formula + " " + dose;
         File fileForCAL = new File("PAT//meds/text");
         Scanner scannerForCAL = new Scanner(fileForCAL);
@@ -30,7 +30,8 @@ public class DosageCalculator {
         // To find line
         boolean isMatch = false;
 
-        // formula
+        // to get formula
+        String formulaInput = "";
         String formulaWeight = "";
         String formulaMultiply = "*";
         String formulaMg_kg = "";
@@ -51,23 +52,48 @@ public class DosageCalculator {
                 currentDose = tokens[3];
 
                 // Check for a match
-                if (currentMeds.equalsIgnoreCase(meds)
-                        && currentSpecies.equalsIgnoreCase(species)
-                        && currentFormula.equalsIgnoreCase(formula)
-                        && currentDose.equalsIgnoreCase(dose)) {
+                if (currentDose.equalsIgnoreCase(dose)
+                        && currentMeds.equalsIgnoreCase(meds)
+                        && currentSpecies.equalsIgnoreCase(species)) {
                     isMatch = true; // Set matchFound to true
                     break; // Exit the loop if a match is found
                 } // End of if current == entered statemeny
             } // end of Token if statement
 
-            if (isMatch) {
-              
-            }
-       
+            while (isMatch) {
+                formulaInput = currentFormula;
+                Scanner formulaSc = new Scanner(formulaInput);
+                double calculation = 0;
 
-        } // end of while scannerForCAL.hasNextLine() loop
-    } // End of method CalculatingDose
-} // end of class
+                if (formulaSc.hasNext()) {
+                    String placement = formulaSc.nextLine().trim();
+
+                    // Breaking line into tokens
+                    String[] tokens = placement.split("\\s+");
+
+                    if (tokens.length >= 5) {
+                        // Saving the tokens to variables
+                        formulaWeight = weight;
+                        formulaMultiply = tokens[1];
+                        formulaMg_kg = tokens[2];
+                        formulaDivide = tokens[3];
+                        formulaMg = tokens[4];
+                    } // end of while scannerForCAL.hasNextLine() loop
+
+                    double currentWeight = Double.parseDouble(formulaWeight);
+                    double currentMg_kg = Double.parseDouble(formulaMg_kg);
+                    double currentMg = Double.parseDouble(formulaMg);
+
+                    calculation = currentWeight * currentMg_kg / currentMg;
+
+                }
+                formulaSc.close(); // Close the formula scanner
+            }
+
+            scannerForCAL.close(); // Close the main scanner
+            return String.valueOf(calculation); // end of getFormula method
+
+        } // end of class
 
 // OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE #
 //        String currentMeds = "";
@@ -133,3 +159,52 @@ public class DosageCalculator {
 //            }// end of isMed && isSpecies && isFormula = true if statement 
 //
 //        } // end of while hasNextLine loop
+//   public static void CalculatingDose(String meds, String species, String weight, String dose) throws FileNotFoundException, IOException {
+//        // NOTE ORDER IN DOC = meds + " " + species + " " + formula + " " + dose;
+//        File fileForCAL = new File("PAT//meds/text");
+//        Scanner scannerForCAL = new Scanner(fileForCAL);
+//
+//        // To save tokens
+//        String currentMeds = "";
+//        String currentSpecies = "";
+//        String currentFormula = "";
+//        String currentDose = "";
+//
+//        // To find line
+//        boolean isMatch = false;
+//
+//        // to get formula
+//        String formulaWeight = "";
+//        String formulaMultiply = "*";
+//        String formulaMg_kg = "";
+//        String formulaDivide = "/";
+//        String formulaMg = "";
+//
+//        while (scannerForCAL.hasNextLine()) {
+//            String line = scannerForCAL.nextLine();
+//
+//            //Breaking line into tokens
+//            String[] tokens = line.split(" ");
+//
+//            if (tokens.length >= 4) {
+//                // Saving the tokens to variables
+//                currentMeds = tokens[0];
+//                currentSpecies = tokens[1];
+//                currentFormula = tokens[2];
+//                currentDose = tokens[3];
+//
+//                // Check for a match
+//                if (currentMeds.equalsIgnoreCase(meds)
+//                        && currentSpecies.equalsIgnoreCase(species)
+//                        && currentDose.equalsIgnoreCase(dose)) {
+//                    isMatch = true; // Set matchFound to true
+//                    break; // Exit the loop if a match is found
+//                } // End of if current == entered statemeny
+//            } // end of Token if statement
+//
+//            //if (isMatch) 
+//            // formulaWeight = weight;
+//            //currentFormula = 
+//        } // end of while scannerForCAL.hasNextLine() loop
+//
+//    } // End of method CalculatingDose

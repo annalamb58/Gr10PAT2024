@@ -95,12 +95,12 @@ public class UI extends javax.swing.JFrame {
         label_CAL_Medication = new javax.swing.JLabel();
         comboBox_CAL_Species = new javax.swing.JComboBox<>();
         button_CAL_Calculate = new javax.swing.JButton();
-        textField_CAL_Dosage = new javax.swing.JTextField();
         label_CAL_Dosage = new javax.swing.JLabel();
         textField_CAL_Weight = new javax.swing.JTextField();
         checkbox_CAL_HighDose_YES = new javax.swing.JCheckBox();
         label_CAl_HighDose = new javax.swing.JLabel();
         comboBox_CAL_Meds = new javax.swing.JComboBox<>();
+        label_CAL_DosageAnswer = new javax.swing.JLabel();
         SPECIES_PANE = new javax.swing.JPanel();
         jScrollPane12 = new javax.swing.JScrollPane();
         list_SPECIES_SpeciesList = new javax.swing.JList<>();
@@ -115,7 +115,7 @@ public class UI extends javax.swing.JFrame {
         list_MED_MedsList = new javax.swing.JList<>();
         textField_MED_MedName = new javax.swing.JTextField();
         textField_MED_FormulaAdd = new javax.swing.JTextField();
-        button_MED_FormulaAdd = new javax.swing.JButton();
+        button_MED_MedicationAdd = new javax.swing.JButton();
         label_MED_FormulaAdd = new javax.swing.JLabel();
         label_MED_MedName = new javax.swing.JLabel();
         label_MED_FormulaGuide = new javax.swing.JLabel();
@@ -162,8 +162,6 @@ public class UI extends javax.swing.JFrame {
             }
         });
 
-        textField_CAL_Dosage.setText("Final Calculation to show here");
-
         label_CAL_Dosage.setText("Dosage");
 
         checkbox_CAL_HighDose_YES.setText("Yes");
@@ -176,6 +174,10 @@ public class UI extends javax.swing.JFrame {
         label_CAl_HighDose.setText("High Dose?");
 
         comboBox_CAL_Meds.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        label_CAL_DosageAnswer.setBackground(new java.awt.Color(255, 255, 255));
+        label_CAL_DosageAnswer.setForeground(new java.awt.Color(204, 0, 0));
+        label_CAL_DosageAnswer.setText("bnnnnnnnnnnnnnnnnnnnn");
 
         javax.swing.GroupLayout DOSAGE_CAL_PANELayout = new javax.swing.GroupLayout(DOSAGE_CAL_PANE);
         DOSAGE_CAL_PANE.setLayout(DOSAGE_CAL_PANELayout);
@@ -204,8 +206,8 @@ public class UI extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(label_CAL_Dosage, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textField_CAL_Dosage, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(165, Short.MAX_VALUE))
+                            .addComponent(label_CAL_DosageAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
         DOSAGE_CAL_PANELayout.setVerticalGroup(
             DOSAGE_CAL_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,9 +235,9 @@ public class UI extends javax.swing.JFrame {
                             .addComponent(checkbox_CAL_HighDose_YES))
                         .addGap(18, 18, 18)))
                 .addComponent(label_CAL_Dosage)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textField_CAL_Dosage, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(label_CAL_DosageAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         LOCATION_TAB.addTab("Dosage Calculator", DOSAGE_CAL_PANE);
@@ -342,10 +344,10 @@ public class UI extends javax.swing.JFrame {
             }
         });
 
-        button_MED_FormulaAdd.setText("ADD");
-        button_MED_FormulaAdd.addActionListener(new java.awt.event.ActionListener() {
+        button_MED_MedicationAdd.setText("ADD");
+        button_MED_MedicationAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button_MED_FormulaAddActionPerformed(evt);
+                button_MED_MedicationAddActionPerformed(evt);
             }
         });
 
@@ -422,7 +424,7 @@ public class UI extends javax.swing.JFrame {
                                             .addComponent(label_MED_FormulaAdd)
                                             .addComponent(textField_MED_FormulaAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MEDICATION_PANELayout.createSequentialGroup()
-                                                .addComponent(button_MED_FormulaAdd)
+                                                .addComponent(button_MED_MedicationAdd)
                                                 .addGap(40, 40, 40))
                                             .addComponent(comboBox_MED_Species, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(label_MED_Species)))
@@ -464,7 +466,7 @@ public class UI extends javax.swing.JFrame {
                                 .addGap(13, 13, 13)
                                 .addComponent(textField_MED_FormulaAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(button_MED_FormulaAdd))
+                                .addComponent(button_MED_MedicationAdd))
                             .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(10, 10, 10)))
                 .addContainerGap(16, Short.MAX_VALUE))
@@ -498,7 +500,7 @@ public class UI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_comboBox_CAL_SpeciesActionPerformed
 
-    private void button_MED_FormulaAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_MED_FormulaAddActionPerformed
+    private void button_MED_MedicationAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_MED_MedicationAddActionPerformed
         try {
             // get stuff from frontend
             String newDose = " ";
@@ -521,7 +523,7 @@ public class UI extends javax.swing.JFrame {
         }
 
 
-    }//GEN-LAST:event_button_MED_FormulaAddActionPerformed
+    }//GEN-LAST:event_button_MED_MedicationAddActionPerformed
 
     private void button_MED_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_MED_DeleteActionPerformed
         try {
@@ -669,7 +671,7 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.JPanel SPECIES_PANE;
     private javax.swing.JButton button_CAL_Calculate;
     private javax.swing.JButton button_MED_Delete;
-    private javax.swing.JButton button_MED_FormulaAdd;
+    private javax.swing.JButton button_MED_MedicationAdd;
     private javax.swing.JButton button_SPECIES_Add;
     private javax.swing.JButton button_SPECIES_Delete;
     private javax.swing.JCheckBox checkbox_CAL_HighDose_YES;
@@ -681,6 +683,7 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JLabel label_CAL_Dosage;
+    private javax.swing.JLabel label_CAL_DosageAnswer;
     private javax.swing.JLabel label_CAL_Medication;
     private javax.swing.JLabel label_CAL_Speices;
     private javax.swing.JLabel label_CAL_Weight;
@@ -698,7 +701,6 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.JList<String> list_MED_MedsList;
     private javax.swing.JList<String> list_SPECIES_SpeciesList;
     private javax.swing.JTextArea textArea_MED_FormulaGuide;
-    private javax.swing.JTextField textField_CAL_Dosage;
     private javax.swing.JTextField textField_CAL_Weight;
     private javax.swing.JTextField textField_MED_FormulaAdd;
     private javax.swing.JTextField textField_MED_MedName;

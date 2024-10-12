@@ -57,13 +57,13 @@ public class SpeciesManager {
         pw.close();
 
     }
-    
-    public static void addSpecies (String species) throws FileNotFoundException, IOException {
+
+    public static void addSpecies(String species) throws FileNotFoundException, IOException {
         File speciesFile = new File("PATdata//species.txt");
         Scanner speciesSc = new Scanner(speciesFile);
-        
-        String line = speciesSc.nextLine() + " " + species ;
-        
+
+        String line = speciesSc.nextLine() + " " + species;
+
         FileWriter speciesFileWriter = new FileWriter("PATdata//species.txt");
         PrintWriter pw = new PrintWriter(speciesFileWriter);
         pw.write(line);

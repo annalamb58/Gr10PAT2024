@@ -143,30 +143,26 @@ public class SignUp extends javax.swing.JFrame {
             String user = TextField_SIGNUP_Username.getText();
             String password = PasswordField_SIGNUP_Password.getText();
             //Check withh backend
-            if(UserManager.checkLogin(user, password)){
+            if (UserManager.checkLogin(user, password)) {
                 //Move to next screen
                 new UI().setVisible(true);
                 //Closes Login screen
                 this.dispose();
             }
-             
-            
-            
+
         } catch (Exception ex) {
             Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Button_SIGNUP_SignUpActionPerformed
 
     private void Button_SIGNUP_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_SIGNUP_LoginActionPerformed
-     
-        
-        
-        
+
+
     }//GEN-LAST:event_Button_SIGNUP_LoginActionPerformed
 
     /**
-         * @param args the command line arguments
-         */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -197,7 +193,7 @@ public class SignUp extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
+
             }
         });
     }

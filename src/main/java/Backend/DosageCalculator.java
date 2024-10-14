@@ -16,12 +16,13 @@ import java.util.Scanner;
  */
 public class DosageCalculator {
 
-    public static String CalculatingDose(String meds, String species, String weight, String dose) throws FileNotFoundException, IOException {
+    public static double CalculatingDose(String meds, String species, String weight, String dose) throws FileNotFoundException, IOException {
         // NOTE ORDER IN DOC = meds + " " + species + " " + formula + " " + dose;
-        File fileForCAL = new File("PAT//meds/text");
+        File fileForCAL = new File("PATdata//meds.txt");
         Scanner scannerForCAL = new Scanner(fileForCAL);
 
-        // To save tokens
+        double calculation = 0;
+        // To save tokens   
         String currentMeds = "";
         String currentSpecies = "";
         String currentFormula = "";
@@ -63,7 +64,7 @@ public class DosageCalculator {
             while (isMatch) {
                 formulaInput = currentFormula;
                 Scanner formulaSc = new Scanner(formulaInput);
-                double calculation = 0;
+                
 
                 if (formulaSc.hasNext()) {
                     String placement = formulaSc.nextLine().trim();
@@ -94,7 +95,7 @@ public class DosageCalculator {
             //return String.valueOf(calculation); // end of getFormula method
 
         } // end of class
-        return null;
+        return calculation;
     }
 }
 // OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE # OLD CODE #

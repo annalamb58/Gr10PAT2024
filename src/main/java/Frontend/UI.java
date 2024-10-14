@@ -593,21 +593,27 @@ public class UI extends javax.swing.JFrame {
     private void button_CAL_CalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_CAL_CalculateActionPerformed
         // Calculating the dosage:
         try {
+            label_CAL_DosageAnswer.setText(null);
             // getting information entered by user
+            String doseWanted = "";
             String selectedMed = (String) comboBox_CAL_Meds.getSelectedItem();
             String selectedSpecies = (String) comboBox_CAL_Species.getSelectedItem();
             String weightEnterd = textField_CAL_Weight.getText();
             if (checkbox_MED_HighDose_YES.isSelected()) {
-                String doseWanted = "high";
+                doseWanted = "high";
             } else {
-                String doseWanted = "low";
+                doseWanted = "low";
             }
             // send to backend
-            DosageCalculator.CalculatingDose(selectedMed, selectedMed, selectedMed, selectedMed);
-            
+            DosageCalculator.CalculatingDose(selectedMed, selectedSpecies, weightEnterd, doseWanted);
+
             // update fronted
-            
-            
+            // Call the backend method to calculate the dosage
+            double calculatedDose = DosageCalculator.CalculatingDose(selectedMed, selectedSpecies, weightEnterd, doseWanted);
+
+            // Update frontend: display the calculated dosage in the label
+            label_CAL_DosageAnswer.setText("Calculated dosage: " + calculatedDose);
+
         } catch (IOException ex) {
             Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
         }

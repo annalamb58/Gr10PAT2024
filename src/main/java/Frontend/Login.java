@@ -43,6 +43,10 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(217, 217, 217));
 
+        TextField_LOGIN_Username.setText("bob");
+
+        PasswordField_LOGIN_Password.setText("1234");
+
         Label_LOGIN_Username.setText("Username:");
 
         Label_LOGIN_Password.setText("Password:");
@@ -65,8 +69,6 @@ public class Login extends javax.swing.JFrame {
 
         label_LOGIN_Login.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         label_LOGIN_Login.setText("LOGIN");
-
-        label_LOGIN_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resizedLOGO.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

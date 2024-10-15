@@ -87,7 +87,7 @@
                                   <Component id="label_CAL_Speices" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="label_CAL_Weight" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="label_CAL_Medication" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="label_CAl_HighDose" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="label_CAl_HighDose" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -101,11 +101,11 @@
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="label_CAL_Dosage" min="-2" pref="88" max="-2" attributes="0"/>
-                                  <Component id="label_CAL_DosageAnswer" min="-2" pref="282" max="-2" attributes="0"/>
+                                  <Component id="label_CAL_DosageAnswer" min="-2" pref="229" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="154" max="32767" attributes="0"/>
+                      <EmptySpace pref="197" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -123,27 +123,27 @@
                           <Component id="textField_CAL_Weight" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Component id="label_CAL_Medication" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                              <Component id="button_CAL_Calculate" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="comboBox_CAL_Meds" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="label_CAl_HighDose" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkbox_CAL_HighDose_YES" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="button_CAL_Calculate" min="-2" max="-2" attributes="0"/>
+                                  <Component id="label_CAl_HighDose" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace pref="39" max="32767" attributes="0"/>
+                              <Component id="label_CAL_Dosage" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="comboBox_CAL_Meds" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="checkbox_CAL_HighDose_YES" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="label_CAL_Dosage" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="label_CAL_DosageAnswer" min="-2" pref="121" max="-2" attributes="0"/>
-                      <EmptySpace pref="19" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="label_CAL_DosageAnswer" min="-2" pref="106" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

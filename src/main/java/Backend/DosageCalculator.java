@@ -64,16 +64,15 @@ public class DosageCalculator {
             while (isMatch) {
                 formulaInput = currentFormula;
                 Scanner formulaSc = new Scanner(formulaInput);
-                
 
                 if (formulaSc.hasNext()) {
                     String placement = formulaSc.nextLine().trim();
 
                     // Breaking line into tokens
-                    //String[] tokens = placement.split("\\s+");
+                    String[] tokens = placement.split("#");
 
                     if (tokens.length >= 5) {
-                        // Saving the tokens to variables
+                        // Saving the tokens to variablesS
                         formulaWeight = weight;
                         formulaMultiply = tokens[1];
                         formulaMg_kg = tokens[2];

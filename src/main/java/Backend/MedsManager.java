@@ -21,8 +21,8 @@ import java.util.logging.Logger;
  * @author Anna
  */
 public class MedsManager {
-  
-     //default list
+
+    //default list
     public static String[] getMedsList() throws FileNotFoundException {
         File medsFile = new File("PATdata//meds.txt");
         Scanner fileSc = new Scanner(medsFile);
@@ -38,12 +38,12 @@ public class MedsManager {
         // list
         fileSc = new Scanner(medsFile);
         String[] meds = new String[count];
-        
+
         for (int i = 0; i < count; i++) {
             String line = fileSc.nextLine();
-            
-            Scanner medsSc = new Scanner(line); 
-            meds[i] = medsSc.next();
+
+            Scanner medsSc = new Scanner(line);
+            meds[i] = medsSc.nextLine();
         }
         return meds;
 
@@ -70,9 +70,9 @@ public class MedsManager {
     public static void addNewMed(String meds, String species, String formula, String dose) throws FileNotFoundException, IOException {
         File medsFile = new File("PATdata//meds.txt");
         Scanner medsSc = new Scanner(medsFile);
-        
+
         String output = "";
-        while(medsSc.hasNextLine()){
+        while (medsSc.hasNextLine()) {
             output += medsSc.nextLine() + "\n";
         }
         output += meds + " " + species + " " + formula + " " + dose;
@@ -81,9 +81,26 @@ public class MedsManager {
         PrintWriter pw = new PrintWriter(medsFileWriter);
         pw.write(output);
         pw.close();
-        
-        
+
     }
+
+    public static String[] getFirstMeds(String[] meds) {
+        String[] names = new String[meds.length];
+
+        for (int i = 0; i < meds.length; i++) {
+            String line = meds[i];
+            Scanner lineSc = new Scanner(line);
+
+            if (lineSc.hasNext()) {
+                names[i] = lineSc.next();
+            }
+            lineSc.close();
+        }
+
+        return names;
+    }
+}
+
 //    public static void addNameofMed(String meds) throws FileNotFoundException, IOException {
 //        File medsFile = new File("data//meds.txt");
 //        Scanner medsSc = new Scanner(medsFile);
@@ -95,10 +112,6 @@ public class MedsManager {
 //        pw.write(line);
 //        pw.close();
 //        
-        
-    }
-    
-
 //    public static void findFormula(String givenFormula) throws FileNotFoundException, IOException {
 //        File formulaFile = new File("data//combined.txt");
 //        Scanner formulaSc = new Scanner(formulaFile).useDelimiter("#");
@@ -112,5 +125,4 @@ public class MedsManager {
 //            String formula = formulaSc.next();
 //        }
 //        
-    
-    
+

@@ -115,8 +115,6 @@ public class UI extends javax.swing.JFrame {
         label_MED_FormulaAdd = new javax.swing.JLabel();
         label_MED_MedName = new javax.swing.JLabel();
         label_MED_FormulaGuide = new javax.swing.JLabel();
-        jScrollPane15 = new javax.swing.JScrollPane();
-        textArea_MED_FormulaGuide = new javax.swing.JTextArea();
         label_MED_MedsList = new javax.swing.JLabel();
         label_MED_Species = new javax.swing.JLabel();
         comboBox_MED_Species = new javax.swing.JComboBox<>();
@@ -124,6 +122,8 @@ public class UI extends javax.swing.JFrame {
         button_MED_Delete = new javax.swing.JButton();
         label_MED_HighDose = new javax.swing.JLabel();
         checkbox_MED_HighDose_YES = new javax.swing.JCheckBox();
+        label_MED_FormulaGuideHelp = new javax.swing.JLabel();
+        label_MED_FormulaGuideToDo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -293,7 +293,7 @@ public class UI extends javax.swing.JFrame {
                                         .addComponent(label_SPECIES_SelectDelete)
                                         .addGap(18, 18, 18)
                                         .addComponent(button_SPECIES_Delete)))
-                                .addGap(0, 81, Short.MAX_VALUE))
+                                .addGap(0, 94, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SPECIES_PANELayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(button_SPECIES_Add)
@@ -353,11 +353,6 @@ public class UI extends javax.swing.JFrame {
 
         label_MED_FormulaGuide.setText("Formula Guide");
 
-        textArea_MED_FormulaGuide.setEditable(false);
-        textArea_MED_FormulaGuide.setColumns(20);
-        textArea_MED_FormulaGuide.setRows(5);
-        jScrollPane15.setViewportView(textArea_MED_FormulaGuide);
-
         label_MED_MedsList.setBackground(new java.awt.Color(251, 193, 110));
         label_MED_MedsList.setText("Medications");
 
@@ -377,6 +372,10 @@ public class UI extends javax.swing.JFrame {
         label_MED_HighDose.setText("High Dose?");
 
         checkbox_MED_HighDose_YES.setText("Yes");
+
+        label_MED_FormulaGuideHelp.setText("weight#*#MGperKG#/#mg");
+
+        label_MED_FormulaGuideToDo.setText("ReplaceMGperKG and MG ");
 
         javax.swing.GroupLayout MEDICATION_PANELayout = new javax.swing.GroupLayout(MEDICATION_PANE);
         MEDICATION_PANE.setLayout(MEDICATION_PANELayout);
@@ -398,21 +397,20 @@ public class UI extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MEDICATION_PANELayout.createSequentialGroup()
                                 .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(MEDICATION_PANELayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                                         .addComponent(label_MED_SelectDelete))
-                                    .addGroup(MEDICATION_PANELayout.createSequentialGroup()
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, MEDICATION_PANELayout.createSequentialGroup()
                                         .addGap(18, 18, 18)
                                         .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jScrollPane15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                                            .addComponent(textField_MED_MedName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(label_MED_FormulaGuide, javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, MEDICATION_PANELayout.createSequentialGroup()
-                                                .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(textField_MED_MedName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(label_MED_FormulaGuide, javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, MEDICATION_PANELayout.createSequentialGroup()
-                                                        .addComponent(label_MED_HighDose)
-                                                        .addGap(30, 30, 30)
-                                                        .addComponent(checkbox_MED_HighDose_YES)))
-                                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                                .addComponent(label_MED_HighDose)
+                                                .addGap(30, 30, 30)
+                                                .addComponent(checkbox_MED_HighDose_YES))
+                                            .addComponent(label_MED_FormulaGuideHelp, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(label_MED_FormulaGuideToDo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 0, Short.MAX_VALUE)))
                                 .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(MEDICATION_PANELayout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -456,14 +454,18 @@ public class UI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(label_MED_FormulaGuide)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(label_MED_FormulaAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label_MED_FormulaGuideHelp))
                         .addGroup(MEDICATION_PANELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(MEDICATION_PANELayout.createSequentialGroup()
-                                .addComponent(label_MED_FormulaAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(13, 13, 13)
                                 .addComponent(textField_MED_FormulaAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(button_MED_MedicationAdd))
-                            .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(MEDICATION_PANELayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(label_MED_FormulaGuideToDo, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(10, 10, 10)))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
@@ -683,7 +685,6 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboBox_MED_Species;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane12;
-    private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JLabel label_CAL_Dosage;
     private javax.swing.JLabel label_CAL_DosageAnswer;
     private javax.swing.JLabel label_CAL_Medication;
@@ -692,6 +693,8 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.JLabel label_CAl_HighDose;
     private javax.swing.JLabel label_MED_FormulaAdd;
     private javax.swing.JLabel label_MED_FormulaGuide;
+    private javax.swing.JLabel label_MED_FormulaGuideHelp;
+    private javax.swing.JLabel label_MED_FormulaGuideToDo;
     private javax.swing.JLabel label_MED_HighDose;
     private javax.swing.JLabel label_MED_MedName;
     private javax.swing.JLabel label_MED_MedsList;
@@ -702,7 +705,6 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.JLabel label_SPECIES_SpeciesList;
     private javax.swing.JList<String> list_MED_MedsList;
     private javax.swing.JList<String> list_SPECIES_SpeciesList;
-    private javax.swing.JTextArea textArea_MED_FormulaGuide;
     private javax.swing.JTextField textField_CAL_Weight;
     private javax.swing.JTextField textField_MED_FormulaAdd;
     private javax.swing.JTextField textField_MED_MedName;

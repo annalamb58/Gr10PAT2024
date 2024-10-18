@@ -280,7 +280,7 @@
                                               <Component id="button_SPECIES_Delete" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="0" pref="81" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="94" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace max="32767" attributes="0"/>
@@ -422,26 +422,23 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <EmptySpace pref="26" max="32767" attributes="0"/>
+                                              <EmptySpace pref="40" max="32767" attributes="0"/>
                                               <Component id="label_MED_SelectDelete" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="102" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="jScrollPane15" alignment="0" pref="190" max="32767" attributes="0"/>
+                                                  <Component id="textField_MED_MedName" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
+                                                  <Component id="label_MED_FormulaGuide" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Group type="102" alignment="0" attributes="0">
-                                                      <Group type="103" groupAlignment="1" attributes="0">
-                                                          <Component id="textField_MED_MedName" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                                                          <Component id="label_MED_FormulaGuide" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <Component id="label_MED_HighDose" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                                              <Component id="checkbox_MED_HighDose_YES" min="-2" max="-2" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
-                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                      <Component id="label_MED_HighDose" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                                      <Component id="checkbox_MED_HighDose_YES" min="-2" max="-2" attributes="0"/>
                                                   </Group>
+                                                  <Component id="label_MED_FormulaGuideHelp" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="label_MED_FormulaGuideToDo" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
                                               </Group>
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -502,15 +499,21 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="label_MED_FormulaGuide" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="label_MED_FormulaAdd" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                                  <Component id="label_MED_FormulaGuideHelp" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="label_MED_FormulaAdd" min="-2" pref="16" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                       <Component id="textField_MED_FormulaAdd" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="button_MED_MedicationAdd" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jScrollPane15" min="-2" pref="76" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="label_MED_FormulaGuideToDo" min="-2" pref="51" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           </Group>
@@ -579,22 +582,6 @@
                 <Property name="text" type="java.lang.String" value="Formula Guide"/>
               </Properties>
             </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane15">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextArea" name="textArea_MED_FormulaGuide">
-                  <Properties>
-                    <Property name="editable" type="boolean" value="false"/>
-                    <Property name="columns" type="int" value="20"/>
-                    <Property name="rows" type="int" value="5"/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
             <Component class="javax.swing.JLabel" name="label_MED_MedsList">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -644,6 +631,16 @@
             <Component class="javax.swing.JCheckBox" name="checkbox_MED_HighDose_YES">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Yes"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="label_MED_FormulaGuideHelp">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="weight#*#MGperKG#/#mg"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="label_MED_FormulaGuideToDo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ReplaceMGperKG and MG "/>
               </Properties>
             </Component>
           </SubComponents>

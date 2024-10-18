@@ -58,15 +58,16 @@ public class UI extends javax.swing.JFrame {
     public void updateMedsList() throws FileNotFoundException {
         //populating the meds list
         String[] meds = MedsManager.getMedsList();
+        String[] firstMeds = MedsManager.getFirstMeds(meds);
         DefaultListModel medsListModel = new DefaultListModel();
         for (int i = 0; i < meds.length; i++) {
-            medsListModel.addElement(meds[i]);
+            medsListModel.addElement(firstMeds[i]);
 
         }
         list_MED_MedsList.setModel(medsListModel);
 
         //Populate combo boxes (meds)
-        DefaultComboBoxModel comboBoxModelMeds = new DefaultComboBoxModel(meds);
+        DefaultComboBoxModel comboBoxModelMeds = new DefaultComboBoxModel(firstMeds);
         comboBox_CAL_Meds.setModel(comboBoxModelMeds);
     }
 
